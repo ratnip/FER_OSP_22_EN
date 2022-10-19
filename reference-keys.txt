@@ -30,3 +30,9 @@ matrices-and-arrays
 matrix-slicing
 example-3.2---matrix-slicing
 lists
+okviri
+data-frames
+selecting-rows-and-columns
+adding-and-deleting-rows-and-columns
+factors
+example-4.1---mishandling-factorization

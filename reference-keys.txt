@@ -69,3 +69,8 @@ generic-functions
 adding-generic-functions-to-an-object
 conclusion-on-s3-objects
 short-overview-of-s4-objects
+pipe
+pipeline-operator
+tidy-data
+the-pivot_longer-andpivot_wider-functions
+the-separate-and-unite-functions

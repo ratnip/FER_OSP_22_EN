@@ -491,7 +491,7 @@ div.csl-indent {
 <span id="cb398-6"><a href="dates.html#cb398-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;01-12-2001 14:30&quot; &lt;- timestamp read in New York, USA, EST time zone</span></span>
 <span id="cb398-7"><a href="dates.html#cb398-7" aria-hidden="true" tabindex="-1"></a><span class="fu">as.POSIXct</span>(<span class="st">&quot;2015-10-28 15:30:42&quot;</span>)</span>
 <span id="cb398-8"><a href="dates.html#cb398-8" aria-hidden="true" tabindex="-1"></a><span class="fu">as.POSIXct</span>(<span class="st">&quot;01-12-2001 14:30&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;EST&quot;</span>, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y %H:%M&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-12-07 11:44:17 CET&quot;
+<pre><code>## [1] &quot;2022-12-07 11:57:01 CET&quot;
 ## [1] &quot;2015-10-28 15:30:42 CET&quot;
 ## [1] &quot;2001-12-01 14:30:00 EST&quot;</code></pre>
 </div>
@@ -527,8 +527,8 @@ div.csl-indent {
 <span id="cb404-3"><a href="dates.html#cb404-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb404-4"><a href="dates.html#cb404-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print out how many hours have passed since midnight 1/1/2015. by far</span></span>
 <span id="cb404-5"><a href="dates.html#cb404-5" aria-hidden="true" tabindex="-1"></a><span class="fu">difftime</span>(<span class="fu">Sys.time</span>(), <span class="st">&quot;2015-01-01 00:00:00&quot;</span>, <span class="at">units =</span> <span class="st">&quot;hours&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;2022-12-07 12:00:57 CET&quot;
-## Time difference of 69539.74 hours</code></pre>
+<pre><code>## [1] &quot;2022-12-07 12:13:41 CET&quot;
+## Time difference of 69539.95 hours</code></pre>
 </div>
 <hr />
 <p>The class <code>POSIXlt</code> is very similar to its compact relative <code>POSIXct</code>. We use the similarly fashioned <code>as.POSIXlt</code> function to create one, however the difference is that we end up with a list which allows us to easily extract certain parameters from a timestamp, such as number of seconds, minutes, day of the week, etc. We can easily see all the elements of the list if we create a <code>POSIXlt</code> object and then call the <code>unclass</code> function on it, which will convert it to an “ordinary” list. We can even go a step further - if we put this list through the <code>unlist</code> function, we get a simple, easily interpretable character vector as a result.</p>
@@ -672,7 +672,7 @@ div.csl-indent {
 <span id="cb425-4"><a href="dates.html#cb425-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print the timestamp which happened exactly an hour ago</span></span>
 <span id="cb425-5"><a href="dates.html#cb425-5" aria-hidden="true" tabindex="-1"></a><span class="fu">now</span>() <span class="sc">-</span> <span class="dv">60</span> <span class="sc">*</span> <span class="dv">60</span></span></code></pre></div>
 <pre><code>## [1] &quot;2022-12-08&quot;
-## [1] &quot;2022-12-07 10:44:18 CET&quot;</code></pre>
+## [1] &quot;2022-12-07 10:57:01 CET&quot;</code></pre>
 </div>
 <hr />
 <p>We already mentioned that managing time-related data can become very complex, especially considering that time intervals can be expressed generically (e.g., “2 years”) or specifically (the span of two dates), and that mathematical and calendar ways of expressing time intervals do not necessarily match (e.g., “period of one year” can mathematically mean “the exact number of seconds in 365 days” but also the contextually dependent “period until the same date next year”).</p>

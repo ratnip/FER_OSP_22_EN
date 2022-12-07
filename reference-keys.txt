@@ -74,3 +74,11 @@ pipeline-operator
 tidy-data
 the-pivot_longer-andpivot_wider-functions
 the-separate-and-unite-functions
+dates
+working-with-dates
+the-date-class
+theposixct-andposixlt-classes
+the-lubridate-package
+working-with-character-strings
+text-analysis-and-regular-expressions
+the-stringr-package

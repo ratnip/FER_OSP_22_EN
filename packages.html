@@ -23,7 +23,7 @@
 <meta name="author" content="Damir Pintar" />
 
 
-<meta name="date" content="2022-11-14" />
+<meta name="date" content="2022-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -122,18 +121,18 @@ pre.plot {
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -153,13 +152,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -172,7 +171,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -186,6 +185,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -200,37 +221,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>(“Statistical Programming Fundamentals” course book)</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>(“Statistical Programming Fundamentals” course book)</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#foreword"><i class="fa fa-check"></i>Foreword</a></li>
 </ul></li>
 <li class="part"><span><b>I Basic elements of R</b></span></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-r"><i class="fa fa-check"></i><b>1.1</b> What is R?</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-r"><i class="fa fa-check"></i><b>1.1</b> What is R?</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#general-facts-about-r"><i class="fa fa-check"></i><b>1.1.1</b> General facts about R</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#r-alternatives"><i class="fa fa-check"></i><b>1.1.2</b> R alternatives</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#installing-software-support"><i class="fa fa-check"></i><b>1.2</b> Installing Software Support</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#overview-of-the-development-interface-rstudio"><i class="fa fa-check"></i><b>1.3</b> Overview of the development interface <em>RStudio</em></a><ul>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#overview-of-the-development-interface-rstudio"><i class="fa fa-check"></i><b>1.3</b> Overview of the development interface <em>RStudio</em></a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#interactive-console"><i class="fa fa-check"></i><b>1.3.1</b> Interactive console</a></li>
 <li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#writing-r-scripts"><i class="fa fa-check"></i><b>1.3.2</b> Writing R scripts</a></li>
 <li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#r-markdown"><i class="fa fa-check"></i><b>1.3.3</b> <em>R Markdown</em></a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#how-to-use-this-coursebook"><i class="fa fa-check"></i><b>1.4</b> How to use this coursebook?</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tipovi.html"><a href="tipovi.html"><i class="fa fa-check"></i><b>2</b> Basic data types and operators</a><ul>
+<li class="chapter" data-level="2" data-path="tipovi.html"><a href="tipovi.html"><i class="fa fa-check"></i><b>2</b> Basic data types and operators</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="tipovi.html"><a href="tipovi.html#basic-data-types"><i class="fa fa-check"></i><b>2.1</b> Basic data types</a></li>
 <li class="chapter" data-level="2.2" data-path="tipovi.html"><a href="tipovi.html#operators"><i class="fa fa-check"></i><b>2.2</b> Operators</a></li>
 <li class="chapter" data-level="2.3" data-path="tipovi.html"><a href="tipovi.html#missing-unknown-and-non-existent-values"><i class="fa fa-check"></i><b>2.3</b> Missing, unknown, and non-existent values</a></li>
 <li class="chapter" data-level="" data-path="tipovi.html"><a href="tipovi.html#homework-exercises"><i class="fa fa-check"></i>Homework exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="vektori.html"><a href="vektori.html"><i class="fa fa-check"></i><b>3</b> Vectors, matrices and lists</a><ul>
-<li class="chapter" data-level="3.1" data-path="vektori.html"><a href="vektori.html#vector"><i class="fa fa-check"></i><b>3.1</b> Vector</a><ul>
+<li class="chapter" data-level="3" data-path="vektori.html"><a href="vektori.html"><i class="fa fa-check"></i><b>3</b> Vectors, matrices and lists</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="vektori.html"><a href="vektori.html#vector"><i class="fa fa-check"></i><b>3.1</b> Vector</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="vektori.html"><a href="vektori.html#creating-a-vector"><i class="fa fa-check"></i><b>3.1.1</b> Creating a vector</a></li>
 <li class="chapter" data-level="3.1.2" data-path="vektori.html"><a href="vektori.html#vector-concatenation"><i class="fa fa-check"></i><b>3.1.2</b> Vector concatenation</a></li>
 <li class="chapter" data-level="3.1.3" data-path="vektori.html"><a href="vektori.html#operator"><i class="fa fa-check"></i><b>3.1.3</b> Operator <code>[</code></a></li>
 <li class="chapter" data-level="3.1.4" data-path="vektori.html"><a href="vektori.html#principles-of-vectorization-and-recycling"><i class="fa fa-check"></i><b>3.1.4</b> Principles of vectorization and recycling</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="vektori.html"><a href="vektori.html#index-vectors"><i class="fa fa-check"></i><b>3.2</b> Index vectors</a><ul>
+<li class="chapter" data-level="3.2" data-path="vektori.html"><a href="vektori.html#index-vectors"><i class="fa fa-check"></i><b>3.2</b> Index vectors</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="vektori.html"><a href="vektori.html#positional-indexing"><i class="fa fa-check"></i><b>3.2.1</b> Positional Indexing</a></li>
 <li class="chapter" data-level="3.2.2" data-path="vektori.html"><a href="vektori.html#conditional-indexing"><i class="fa fa-check"></i><b>3.2.2</b> Conditional indexing</a></li>
 <li class="chapter" data-level="3.2.3" data-path="vektori.html"><a href="vektori.html#label-based-indexing"><i class="fa fa-check"></i><b>3.2.3</b> Label-based indexing</a></li>
@@ -241,70 +270,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.6" data-path="vektori.html"><a href="vektori.html#lists"><i class="fa fa-check"></i><b>3.6</b> Lists</a></li>
 <li class="chapter" data-level="" data-path="vektori.html"><a href="vektori.html#homework-exercises-1"><i class="fa fa-check"></i>Homework exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="okviri.html"><a href="okviri.html"><i class="fa fa-check"></i><b>4</b> Data frames and factors</a><ul>
+<li class="chapter" data-level="4" data-path="okviri.html"><a href="okviri.html"><i class="fa fa-check"></i><b>4</b> Data frames and factors</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="okviri.html"><a href="okviri.html#data-frames"><i class="fa fa-check"></i><b>4.1</b> Data frames</a></li>
-<li class="chapter" data-level="4.2" data-path="okviri.html"><a href="okviri.html#selecting-rows-and-columns"><i class="fa fa-check"></i><b>4.2</b> Selecting rows and columns</a></li>
-<li class="chapter" data-level="4.3" data-path="okviri.html"><a href="okviri.html#adding-and-deleting-rows-and-columns"><i class="fa fa-check"></i><b>4.3</b> Adding and deleting rows and columns</a></li>
-<li class="chapter" data-level="4.4" data-path="okviri.html"><a href="okviri.html#factors"><i class="fa fa-check"></i><b>4.4</b> Factors</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="okviri.html"><a href="okviri.html#example-4.1---mishandling-factorization"><i class="fa fa-check"></i><b>4.4.1</b> Example 4.1 - mishandling factorization</a></li>
+<li class="chapter" data-level="4.2" data-path="okviri.html"><a href="okviri.html#selecting-rows-and-columns"><i class="fa fa-check"></i><b>4.2</b> Selecting rows and columns</a>
+<ul>
+<li class="chapter" data-level="10.1.2" data-path="dates.html"><a href="dates.html"><i class="fa fa-check"></i><b>10.1.2</b> The<code>POSIXct</code> and<code>POSIXlt</code> classes</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="okviri.html"><a href="okviri.html#homework-exercises-2"><i class="fa fa-check"></i>Homework exercises</a></li>
+<li class="chapter" data-level="10.2" data-path="dates.html"><a href="dates.html#the-lubridate-package"><i class="fa fa-check"></i><b>10.2</b> The <code>lubridate</code> package</a></li>
+<li class="chapter" data-level="10.3" data-path="dates.html"><a href="dates.html#working-with-character-strings"><i class="fa fa-check"></i><b>10.3</b> Working with character strings</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="dates.html"><a href="dates.html#text-analysis-and-regular-expressions"><i class="fa fa-check"></i><b>10.3.1</b> Text analysis and regular expressions</a></li>
+<li class="chapter" data-level="10.3.2" data-path="dates.html"><a href="dates.html#the-stringr-package"><i class="fa fa-check"></i><b>10.3.2</b> The <code>stringr</code> package</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="control.html"><a href="control.html"><i class="fa fa-check"></i><b>5</b> Conditional statements and programming loops</a><ul>
-<li class="chapter" data-level="5.1" data-path="control.html"><a href="control.html#flow-control-commands"><i class="fa fa-check"></i><b>5.1</b> Flow control commands</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="control.html"><a href="control.html#conditional-execution"><i class="fa fa-check"></i><b>5.1.1</b> Conditional execution</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="control.html"><a href="control.html#loops"><i class="fa fa-check"></i><b>5.2</b> Loops</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="control.html"><a href="control.html#therepeat-loop"><i class="fa fa-check"></i><b>5.2.1</b> The<code>repeat</code> loop</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="control.html"><a href="control.html#example-5.1---the-repeat-loop"><i class="fa fa-check"></i><b>5.3</b> Example 5.1 - the <code>repeat</code> loop</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="control.html"><a href="control.html#the-while-loop"><i class="fa fa-check"></i><b>5.3.1</b> The <code>while</code> loop</a></li>
-<li class="chapter" data-level="5.3.2" data-path="control.html"><a href="control.html#the-for-loop"><i class="fa fa-check"></i><b>5.3.2</b> The <code>for</code> loop</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="control.html"><a href="control.html#homework-exercises-3"><i class="fa fa-check"></i>Homework exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="packages.html"><a href="packages.html"><i class="fa fa-check"></i><b>6</b> Packages, built-in functions and environments</a><ul>
-<li class="chapter" data-level="6.1" data-path="packages.html"><a href="packages.html#working-with-packages"><i class="fa fa-check"></i><b>6.1</b> Working with packages</a></li>
-<li class="chapter" data-level="6.2" data-path="packages.html"><a href="packages.html#built-in-functions"><i class="fa fa-check"></i><b>6.2</b> Built-in functions</a></li>
-<li class="chapter" data-level="6.3" data-path="packages.html"><a href="packages.html#environments"><i class="fa fa-check"></i><b>6.3</b> Environments</a></li>
-<li class="chapter" data-level="" data-path="packages.html"><a href="packages.html#homework-exercises-4"><i class="fa fa-check"></i>Homework exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="user.html"><a href="user.html"><i class="fa fa-check"></i><b>7</b> User Defined Functions</a><ul>
-<li class="chapter" data-level="7.1" data-path="user.html"><a href="user.html#user-defined-functions"><i class="fa fa-check"></i><b>7.1</b> User defined functions</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="user.html"><a href="user.html#defining-a-new-function"><i class="fa fa-check"></i><b>7.1.1</b> Defining a new function</a></li>
-<li class="chapter" data-level="7.1.2" data-path="user.html"><a href="user.html#the-copy-on-modify-principle"><i class="fa fa-check"></i><b>7.1.2</b> The “copy-on-modify” principle</a></li>
-<li class="chapter" data-level="7.1.3" data-path="user.html"><a href="user.html#example-7.1---copy-on-modify"><i class="fa fa-check"></i><b>7.1.3</b> Example 7.1 - “copy-on-modify”</a></li>
-<li class="chapter" data-level="7.1.4" data-path="user.html"><a href="user.html#example-7.2---copy-on-modify-2"><i class="fa fa-check"></i><b>7.1.4</b> Example 7.2 - “copy-on-modify (2)”</a></li>
-<li class="chapter" data-level="7.1.5" data-path="user.html"><a href="user.html#example-7.3---copy-on-modify-and-environments"><i class="fa fa-check"></i><b>7.1.5</b> Example 7.3 - “copy-on-modify” and environments</a></li>
-<li class="chapter" data-level="7.1.6" data-path="user.html"><a href="user.html#example-7.4---the---operator"><i class="fa fa-check"></i><b>7.1.6</b> Example 7.4 - the <code>&lt;&lt;-</code> operator</a></li>
-<li class="chapter" data-level="7.1.7" data-path="user.html"><a href="user.html#example-7.5---changing-a-data-frame-column-with-the---operator"><i class="fa fa-check"></i><b>7.1.7</b> Example 7.5 - changing a data frame column with the <code>&lt;&lt;-</code> operator</a></li>
-<li class="chapter" data-level="7.1.8" data-path="user.html"><a href="user.html#function-as-an-object"><i class="fa fa-check"></i><b>7.1.8</b> Function as an object</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="user.html"><a href="user.html#the-apply-family"><i class="fa fa-check"></i><b>7.2</b> The <code>apply</code> family</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="user.html"><a href="user.html#the-apply-function"><i class="fa fa-check"></i><b>7.2.1</b> The <code>apply</code> function</a></li>
-<li class="chapter" data-level="7.2.2" data-path="user.html"><a href="user.html#the-lapply-sapply-and-vapply-functions"><i class="fa fa-check"></i><b>7.2.2</b> The <code>lapply</code>, <code>sapply</code> and <code>vapply</code> functions</a></li>
-<li class="chapter" data-level="7.2.3" data-path="user.html"><a href="user.html#other-functions-from-the-apply-family-and-the-available-alternatives"><i class="fa fa-check"></i><b>7.2.3</b> Other functions from the <code>apply</code> family and the available alternatives</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="user.html"><a href="user.html#homework-exercises-5"><i class="fa fa-check"></i>Homework exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>8</b> Object oriented systems in R</a><ul>
-<li class="chapter" data-level="8.1" data-path="objects.html"><a href="objects.html#object-oriented-systems-in-r"><i class="fa fa-check"></i><b>8.1</b> Object-oriented systems in R</a></li>
-<li class="chapter" data-level="8.2" data-path="objects.html"><a href="objects.html#overview-of-the-s3-object-model"><i class="fa fa-check"></i><b>8.2</b> Overview of the S3 object model</a></li>
-<li class="chapter" data-level="8.3" data-path="objects.html"><a href="objects.html#generic-functions"><i class="fa fa-check"></i><b>8.3</b> Generic functions</a></li>
-<li class="chapter" data-level="8.4" data-path="objects.html"><a href="objects.html#adding-generic-functions-to-an-object"><i class="fa fa-check"></i><b>8.4</b> Adding generic functions to an object</a><ul>
-<li class="chapter" data-level="8.4.1" data-path="objects.html"><a href="objects.html#conclusion-on-s3-objects"><i class="fa fa-check"></i><b>8.4.1</b> Conclusion on S3 objects</a></li>
-</ul></li>
-<li class="chapter" data-level="8.5" data-path="objects.html"><a href="objects.html#short-overview-of-s4-objects"><i class="fa fa-check"></i><b>8.5</b> Short overview of S4 objects</a></li>
-<li class="chapter" data-level="" data-path="objects.html"><a href="objects.html#homework-exercises-6"><i class="fa fa-check"></i>Homework exercises</a></li>
-</ul></li>
-<li class="part"><span><b>II Data management and visualizations</b></span></li>
-<li class="chapter" data-level="9" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>9</b> Pipeline operator and tidy data</a><ul>
-<li class="chapter" data-level="9.1" data-path="pipe.html"><a href="pipe.html#pipeline-operator"><i class="fa fa-check"></i><b>9.1</b> Pipeline operator</a></li>
-<li class="chapter" data-level="9.2" data-path="pipe.html"><a href="pipe.html#tidy-data"><i class="fa fa-check"></i><b>9.2</b> Tidy data</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="pipe.html"><a href="pipe.html#the-pivot_longer-andpivot_wider-functions"><i class="fa fa-check"></i><b>9.2.1</b> The <code>pivot_longer</code> and<code>pivot_wider</code> functions</a></li>
-<li class="chapter" data-level="9.2.2" data-path="pipe.html"><a href="pipe.html#the-separate-and-unite-functions"><i class="fa fa-check"></i><b>9.2.2</b> The <code>separate</code> and <code>unite</code> functions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="pipe.html"><a href="pipe.html#exercise-tasks"><i class="fa fa-check"></i>Exercise Tasks</a></li>
+<li class="chapter" data-level="" data-path="dates.html"><a href="dates.html#exercise-tasks-1"><i class="fa fa-check"></i>Exercise Tasks</a></li>
 </ul></li>
 </ul>
 
@@ -323,22 +302,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="packages" class="section level1 hasAnchor">
+<div id="packages" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Packages, built-in functions and environments<a href="packages.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <hr />
-<div id="working-with-packages" class="section level2 hasAnchor">
+<div id="working-with-packages" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Working with packages<a href="packages.html#working-with-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The standard R distribution comes with two collections of packages (called <code>r-base</code> and <code>r-recommended</code>) that contain a language R “core” of sorts - a set of building blocks sufficient for conducting the most typical data analysis tasks using the programming language R. In addition, <strong>CRAN</strong> (<em>Comprehensive R Archive Network</em>) provides a rich repository of additional packages for a wide variety of applications, from “quality-of-life” upgrades to basic elements to highly specialized packages aiming for extremely specific purposes.</p>
 <p>In line with common programming language practices, R uses a notion of “packages” or “libraries” to logically organize already “pre-programmed” collections of data, functions, and compiled code.</p>
 <p>Upon starting the R environment, certain packages are automatically loaded, making their content immediately available for use. The list of loaded packages can be easily obtained using the <code>search</code> function, which will then show us the so-called “search path”.</p>
 <hr />
 <p><strong>Exercise 6.1 - the search path</strong></p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="packages.html#cb196-1"></a><span class="co"># call the `search` function (no parameters) </span></span>
-<span id="cb196-2"><a href="packages.html#cb196-2"></a><span class="co"># to see which packages are loaded into the environment</span></span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="packages.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the `search` function (no parameters) </span></span>
+<span id="cb198-2"><a href="packages.html#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to see which packages are loaded into the environment</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="packages.html#cb197-1"></a><span class="co"># call the `search` function (no parameters) </span></span>
-<span id="cb197-2"><a href="packages.html#cb197-2"></a><span class="co"># to see which packages are loaded into the environment</span></span>
-<span id="cb197-3"><a href="packages.html#cb197-3"></a><span class="kw">search</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="packages.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the `search` function (no parameters) </span></span>
+<span id="cb199-2"><a href="packages.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to see which packages are loaded into the environment</span></span>
+<span id="cb199-3"><a href="packages.html#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;package:lubridate&quot; &quot;package:GGally&quot;   
 ##  [4] &quot;package:forcats&quot;   &quot;package:stringr&quot;   &quot;package:dplyr&quot;    
 ##  [7] &quot;package:purrr&quot;     &quot;package:readr&quot;     &quot;package:tidyr&quot;    
@@ -352,10 +331,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we want to load a new package into our environment, we can do this by using the <code>library</code> function with the package name provided as a parameter (without quotes).</p>
 <hr />
 <p><strong>Exercise 6.2 - loading new packages into the working environment</strong></p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="packages.html#cb199-1"></a><span class="co"># load the `lubridate` package (or other package of your choice)</span></span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="packages.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the `lubridate` package (or other package of your choice)</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="packages.html#cb200-1"></a><span class="co"># load the `lubridate` package </span></span>
-<span id="cb200-2"><a href="packages.html#cb200-2"></a><span class="kw">library</span>(lubridate)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="packages.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the `lubridate` package </span></span>
+<span id="cb202-2"><a href="packages.html#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
 </div>
 <hr />
 <p>The command from the previous example commonly results in one of these two outcomes:</p>
@@ -365,24 +344,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <hr />
 <p><strong>Exercise 6.3 - installing a package from a CRAN repository</strong></p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="packages.html#cb201-1"></a><span class="co"># install the `hflights` package from the CRAN repository</span></span>
-<span id="cb201-2"><a href="packages.html#cb201-2"></a><span class="co"># (You can do this even if you already have the specified package)</span></span>
-<span id="cb201-3"><a href="packages.html#cb201-3"></a></span>
-<span id="cb201-4"><a href="packages.html#cb201-4"></a><span class="co"># load the package again into the work environment</span></span>
-<span id="cb201-5"><a href="packages.html#cb201-5"></a></span>
-<span id="cb201-6"><a href="packages.html#cb201-6"></a><span class="co"># print the search path</span></span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="packages.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install the `hflights` package from the CRAN repository</span></span>
+<span id="cb203-2"><a href="packages.html#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (You can do this even if you already have the specified package)</span></span>
+<span id="cb203-3"><a href="packages.html#cb203-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb203-4"><a href="packages.html#cb203-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load the package again into the work environment</span></span>
+<span id="cb203-5"><a href="packages.html#cb203-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb203-6"><a href="packages.html#cb203-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print the search path</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="packages.html#cb202-1"></a><span class="co"># install the `dplyr` package from the CRAN repository</span></span>
-<span id="cb202-2"><a href="packages.html#cb202-2"></a><span class="co"># (You can do this even if you already have the specified package)</span></span>
-<span id="cb202-3"><a href="packages.html#cb202-3"></a><span class="kw">install.packages</span>(<span class="st">&quot;hflights&quot;</span>)</span>
-<span id="cb202-4"><a href="packages.html#cb202-4"></a></span>
-<span id="cb202-5"><a href="packages.html#cb202-5"></a></span>
-<span id="cb202-6"><a href="packages.html#cb202-6"></a><span class="co"># load the package again into the work environment</span></span>
-<span id="cb202-7"><a href="packages.html#cb202-7"></a><span class="kw">library</span>(hflights)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="packages.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install the `dplyr` package from the CRAN repository</span></span>
+<span id="cb204-2"><a href="packages.html#cb204-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (You can do this even if you already have the specified package)</span></span>
+<span id="cb204-3"><a href="packages.html#cb204-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;hflights&quot;</span>)</span>
+<span id="cb204-4"><a href="packages.html#cb204-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-5"><a href="packages.html#cb204-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-6"><a href="packages.html#cb204-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load the package again into the work environment</span></span>
+<span id="cb204-7"><a href="packages.html#cb204-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hflights)</span></code></pre></div>
 </div>
 <div class="fold s o">
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="packages.html#cb203-1"></a><span class="co"># print the search path</span></span>
-<span id="cb203-2"><a href="packages.html#cb203-2"></a><span class="kw">search</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="packages.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print the search path</span></span>
+<span id="cb205-2"><a href="packages.html#cb205-2" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;package:lubridate&quot; &quot;package:GGally&quot;   
 ##  [4] &quot;package:forcats&quot;   &quot;package:stringr&quot;   &quot;package:dplyr&quot;    
 ##  [7] &quot;package:purrr&quot;     &quot;package:readr&quot;     &quot;package:tidyr&quot;    
@@ -395,65 +374,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Note: as a rule, we install packages only once, through the console so that there is never a need to install the package installations in <em>R Markdown</em> documents; also, for easier organization of reports, loading all required packages is usually done by at the beginning of the document, in the code snippet called <code>setup</code>. If we want to update packages, one of the easiest way to do this is to simply install them again (caution: if there is a huge discrepancy between package versions, this can cause issues with the code).</p>
 <hr />
 <p>If we want to find out more information about a package, one way to achieve this would be to do this would be calling the <code>library</code> function with the parameter called <code>help</code> set to the package name.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="packages.html#cb205-1"></a><span class="kw">library</span>(<span class="dt">help =</span> dplyr)  <span class="co"># recommendation: try directly in the console</span></span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="packages.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="at">help =</span> dplyr)  <span class="co"># recommendation: try directly in the console</span></span></code></pre></div>
 <p>However, usually it’s more convenient to simply search for the package name (i.e. “CRAN dplyr”) in the web browser and then read the documentation PDF.</p>
 <p>Another quite popular way of perusing documentation of the package is with the help of the so-called “vignettes”. Vignettes are actually “mini-tutorials” of a package done in HTML which present the functionality of the package in an accessible way with the help of detailed explanations and the associated program code. We can look at which vignettes are installed on the system by calling the <code>browseVignettes()</code> function without parameters (or optionally adding as the parameter the package name if we only care about its vignettes). If the package has only one vignette (for example, <code>stringr</code>), we can also open the vignette immediately with the help of the <code>vignette</code> option.</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="packages.html#cb206-1"></a><span class="kw">vignette</span>(<span class="st">&quot;stringr&quot;</span>)  <span class="co"># recommendation: try directly in the console</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="packages.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="st">&quot;stringr&quot;</span>)  <span class="co"># recommendation: try directly in the console</span></span></code></pre></div>
 <hr />
 </div>
-<div id="built-in-functions" class="section level2 hasAnchor">
+<div id="built-in-functions" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Built-in functions<a href="packages.html#built-in-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In previous chapters, we have already introduced some of the functions that we get bundled in with our R distribution. These are, for example, numeric functions (<code>log</code>,<code>abs</code>, <code>sqrt</code>,<code>round</code>, etc.), vector creation functions (<code>rep</code>,<code>seq</code>, etc.), package management functions (<code>install.packages</code>, <code>library</code>, etc.) and so on. R rarely uses the term “built-in” functions since - as it was already shown - the R environment automatically loads some commonly used packages whose elements are immediately available for use, without necessarily indicating the name of the package they are in.</p>
 <p>Let’s take the <code>stats</code> package for example. This package contains a rich set of functions related to statistical processing. One of these functions is <code>rnorm</code>, which returns a numerical vector of the desired length whose elements are randomly selected from the normal distribution with arithmetic mean <code>0</code> and standard deviation <code>1</code> (these values can also be changed using the <code>mean</code> and <code>sd</code> parameters). If we want, we can easily invoke this function by using its full name, i.e. the <code>package_name::function_name(parameters)</code> syntax.</p>
 <hr />
 <p><strong>Exercise 6.4 - calling a function with its full name</strong></p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="packages.html#cb207-1"></a><span class="co"># create a vector `x` that will have 10 random elements</span></span>
-<span id="cb207-2"><a href="packages.html#cb207-2"></a><span class="co"># drawn from standard normal distribution</span></span>
-<span id="cb207-3"><a href="packages.html#cb207-3"></a><span class="co"># use the full name of the `rnorm` function of the`stats` package</span></span>
-<span id="cb207-4"><a href="packages.html#cb207-4"></a></span>
-<span id="cb207-5"><a href="packages.html#cb207-5"></a></span>
-<span id="cb207-6"><a href="packages.html#cb207-6"></a><span class="co"># round the elements of vector `x` to two decimal places</span></span>
-<span id="cb207-7"><a href="packages.html#cb207-7"></a><span class="co"># use the full name of the `round` function from the `base` package</span></span>
-<span id="cb207-8"><a href="packages.html#cb207-8"></a></span>
-<span id="cb207-9"><a href="packages.html#cb207-9"></a><span class="co"># print vector `x`</span></span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="packages.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a vector `x` that will have 10 random elements</span></span>
+<span id="cb209-2"><a href="packages.html#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="co"># drawn from standard normal distribution</span></span>
+<span id="cb209-3"><a href="packages.html#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use the full name of the `rnorm` function of the`stats` package</span></span>
+<span id="cb209-4"><a href="packages.html#cb209-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-5"><a href="packages.html#cb209-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-6"><a href="packages.html#cb209-6" aria-hidden="true" tabindex="-1"></a><span class="co"># round the elements of vector `x` to two decimal places</span></span>
+<span id="cb209-7"><a href="packages.html#cb209-7" aria-hidden="true" tabindex="-1"></a><span class="co"># use the full name of the `round` function from the `base` package</span></span>
+<span id="cb209-8"><a href="packages.html#cb209-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-9"><a href="packages.html#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="co"># print vector `x`</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="packages.html#cb208-1"></a><span class="co"># create a vector `x` that will have 10 random elements</span></span>
-<span id="cb208-2"><a href="packages.html#cb208-2"></a><span class="co"># drawn from standard normal distribution</span></span>
-<span id="cb208-3"><a href="packages.html#cb208-3"></a><span class="co"># use the full name of the `rnorm` function of the `stats` package</span></span>
-<span id="cb208-4"><a href="packages.html#cb208-4"></a>x &lt;-<span class="st"> </span>stats<span class="op">::</span><span class="kw">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb208-5"><a href="packages.html#cb208-5"></a></span>
-<span id="cb208-6"><a href="packages.html#cb208-6"></a><span class="co"># round the elements of vector `x` to two decimal places</span></span>
-<span id="cb208-7"><a href="packages.html#cb208-7"></a><span class="co"># use the full name of the `round` function from the `base` package</span></span>
-<span id="cb208-8"><a href="packages.html#cb208-8"></a>x &lt;-<span class="st"> </span>base<span class="op">::</span><span class="kw">round</span>(x, <span class="dv">2</span>)</span>
-<span id="cb208-9"><a href="packages.html#cb208-9"></a></span>
-<span id="cb208-10"><a href="packages.html#cb208-10"></a><span class="co"># print vector `x`</span></span>
-<span id="cb208-11"><a href="packages.html#cb208-11"></a>x </span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="packages.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a vector `x` that will have 10 random elements</span></span>
+<span id="cb210-2"><a href="packages.html#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="co"># drawn from standard normal distribution</span></span>
+<span id="cb210-3"><a href="packages.html#cb210-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use the full name of the `rnorm` function of the `stats` package</span></span>
+<span id="cb210-4"><a href="packages.html#cb210-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb210-5"><a href="packages.html#cb210-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-6"><a href="packages.html#cb210-6" aria-hidden="true" tabindex="-1"></a><span class="co"># round the elements of vector `x` to two decimal places</span></span>
+<span id="cb210-7"><a href="packages.html#cb210-7" aria-hidden="true" tabindex="-1"></a><span class="co"># use the full name of the `round` function from the `base` package</span></span>
+<span id="cb210-8"><a href="packages.html#cb210-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">round</span>(x, <span class="dv">2</span>)</span>
+<span id="cb210-9"><a href="packages.html#cb210-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-10"><a href="packages.html#cb210-10" aria-hidden="true" tabindex="-1"></a><span class="co"># print vector `x`</span></span>
+<span id="cb210-11"><a href="packages.html#cb210-11" aria-hidden="true" tabindex="-1"></a>x </span></code></pre></div>
 <pre><code>##  [1]  1.43  0.98 -0.62 -0.73 -0.52 -1.75  0.88  1.37 -1.69 -0.63</code></pre>
 </div>
 <hr />
 <p>Although this is a syntactically correct way of calling a function, it’s usually more common to see a call which excludes package names and simply names the function directly.</p>
 <hr />
 <p><strong>Exercise 6.5 - calling a function without the package name</strong></p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="packages.html#cb210-1"></a><span class="co"># create vector `y` by the same principle as vector x</span></span>
-<span id="cb210-2"><a href="packages.html#cb210-2"></a><span class="co"># use only one line of code</span></span>
-<span id="cb210-3"><a href="packages.html#cb210-3"></a><span class="co"># use the function names without the name of the package</span></span>
-<span id="cb210-4"><a href="packages.html#cb210-4"></a></span>
-<span id="cb210-5"><a href="packages.html#cb210-5"></a><span class="co"># print vector `y`</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="packages.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector `y` by the same principle as vector x</span></span>
+<span id="cb212-2"><a href="packages.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use only one line of code</span></span>
+<span id="cb212-3"><a href="packages.html#cb212-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use the function names without the name of the package</span></span>
+<span id="cb212-4"><a href="packages.html#cb212-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-5"><a href="packages.html#cb212-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print vector `y`</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="packages.html#cb211-1"></a><span class="co"># create vector `y` by the same principle as vector x</span></span>
-<span id="cb211-2"><a href="packages.html#cb211-2"></a><span class="co"># use only one line of code</span></span>
-<span id="cb211-3"><a href="packages.html#cb211-3"></a><span class="co"># use the function names without the name of the package</span></span>
-<span id="cb211-4"><a href="packages.html#cb211-4"></a>y &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>), <span class="dv">2</span>)</span>
-<span id="cb211-5"><a href="packages.html#cb211-5"></a></span>
-<span id="cb211-6"><a href="packages.html#cb211-6"></a><span class="co"># print vector `y`</span></span>
-<span id="cb211-7"><a href="packages.html#cb211-7"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="packages.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create vector `y` by the same principle as vector x</span></span>
+<span id="cb213-2"><a href="packages.html#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use only one line of code</span></span>
+<span id="cb213-3"><a href="packages.html#cb213-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use the function names without the name of the package</span></span>
+<span id="cb213-4"><a href="packages.html#cb213-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="dv">2</span>)</span>
+<span id="cb213-5"><a href="packages.html#cb213-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-6"><a href="packages.html#cb213-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print vector `y`</span></span>
+<span id="cb213-7"><a href="packages.html#cb213-7" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
 <pre><code>##  [1]  0.02  0.71 -0.65  0.87  0.38  0.31  0.01 -0.04  0.72 -0.50</code></pre>
 </div>
 <hr />
 <p>We can ask ourselves - how does R know where to find the function’s implementation, if we did not explicitly specify the package where it’s contained? There’s a very easy answer to this, which will be outlined in the next subchapter dealing with environments.Before we delve into this, let’s just remind ourselves that R allows us to quickly get help on the function by simply calling <code>?function_name</code> or <code>help(function_name)</code>, and that we can get examples of using the function through <code>example(function_name)</code>. We should use these calls very often even if we think that we are well acquainted with the function we are calling - it is possible that there is an additional parameter (or a related function that is also often listed in the documentation), which will further help us in carrying out the task related to the function we want to use.</p>
 <hr />
 </div>
-<div id="environments" class="section level2 hasAnchor">
+<div id="environments" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Environments<a href="packages.html#environments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As already mentioned, working in R often boils down to writing instructions on how to manipulate various objects. To do this, we need mechanisms which help us easily refer to the objects concerned. In R (and other programming languages), this is called “binding”. When we created a variable called <code>x</code> of the numeric type and assigned a number <code>5</code> to it, what we actually did was asking R to reserve a place a memory for a new data container (for numerical data) and to document a new character string reference which was then “bound” to this container, allowing us to retrieve or change its contents.</p>
 <p>Let’s now try to think what happens when our code refers to <code>x</code>. When R sees this name, it must search its internal “records” to determine which variables currently exist, of what types they are and how to access them. In order to find the variable which corresponds to stated name, R uses a mechanism called “lexical scoping”, based on the concept of “environments”.</p>
@@ -461,40 +440,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The “default” environment in which we work and in which we create new variables is the so-called “global environment”, or <code>.GlobalEnv</code> (watch out for the dot!). It is at the bottom of the environment hierarchy. We can get a reference to it via the mentioned variable name, or by using the <code>globalenv()</code> function.</p>
 <hr />
 <p><strong>Exercise 6.6 - global environment</strong></p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="packages.html#cb213-1"></a><span class="co"># create a variable `e` which refers to the global environment</span></span>
-<span id="cb213-2"><a href="packages.html#cb213-2"></a></span>
-<span id="cb213-3"><a href="packages.html#cb213-3"></a><span class="co"># print `e`</span></span>
-<span id="cb213-4"><a href="packages.html#cb213-4"></a></span>
-<span id="cb213-5"><a href="packages.html#cb213-5"></a><span class="co"># create a variable `x` and assign the number `5` to it</span></span>
-<span id="cb213-6"><a href="packages.html#cb213-6"></a></span>
-<span id="cb213-7"><a href="packages.html#cb213-7"></a><span class="co"># execute the `ls` function, without parameters</span></span>
-<span id="cb213-8"><a href="packages.html#cb213-8"></a></span>
-<span id="cb213-9"><a href="packages.html#cb213-9"></a><span class="co"># execute the `ls` function with `e` as a parameter</span></span>
-<span id="cb213-10"><a href="packages.html#cb213-10"></a></span>
-<span id="cb213-11"><a href="packages.html#cb213-11"></a><span class="co"># print `x`</span></span>
-<span id="cb213-12"><a href="packages.html#cb213-12"></a></span>
-<span id="cb213-13"><a href="packages.html#cb213-13"></a><span class="co"># print `e$x`    (notice the list syntax!)</span></span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="packages.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a variable `e` which refers to the global environment</span></span>
+<span id="cb215-2"><a href="packages.html#cb215-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb215-3"><a href="packages.html#cb215-3" aria-hidden="true" tabindex="-1"></a><span class="co"># print `e`</span></span>
+<span id="cb215-4"><a href="packages.html#cb215-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb215-5"><a href="packages.html#cb215-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create a variable `x` and assign the number `5` to it</span></span>
+<span id="cb215-6"><a href="packages.html#cb215-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb215-7"><a href="packages.html#cb215-7" aria-hidden="true" tabindex="-1"></a><span class="co"># execute the `ls` function, without parameters</span></span>
+<span id="cb215-8"><a href="packages.html#cb215-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb215-9"><a href="packages.html#cb215-9" aria-hidden="true" tabindex="-1"></a><span class="co"># execute the `ls` function with `e` as a parameter</span></span>
+<span id="cb215-10"><a href="packages.html#cb215-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb215-11"><a href="packages.html#cb215-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print `x`</span></span>
+<span id="cb215-12"><a href="packages.html#cb215-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb215-13"><a href="packages.html#cb215-13" aria-hidden="true" tabindex="-1"></a><span class="co"># print `e$x`    (notice the list syntax!)</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="packages.html#cb214-1"></a><span class="co"># create a variable `e` which refers to the global environment</span></span>
-<span id="cb214-2"><a href="packages.html#cb214-2"></a>e &lt;-<span class="st"> </span>.GlobalEnv  <span class="co"># or e &lt;- globalenv()</span></span>
-<span id="cb214-3"><a href="packages.html#cb214-3"></a></span>
-<span id="cb214-4"><a href="packages.html#cb214-4"></a><span class="co"># print `e`</span></span>
-<span id="cb214-5"><a href="packages.html#cb214-5"></a>e</span>
-<span id="cb214-6"><a href="packages.html#cb214-6"></a></span>
-<span id="cb214-7"><a href="packages.html#cb214-7"></a><span class="co"># create a variable `x` and assign the number `5` to it</span></span>
-<span id="cb214-8"><a href="packages.html#cb214-8"></a>x &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb214-9"><a href="packages.html#cb214-9"></a></span>
-<span id="cb214-10"><a href="packages.html#cb214-10"></a><span class="co"># execute the `ls` function, without parameters</span></span>
-<span id="cb214-11"><a href="packages.html#cb214-11"></a><span class="co">#ls()  # try directly on console!</span></span>
-<span id="cb214-12"><a href="packages.html#cb214-12"></a></span>
-<span id="cb214-13"><a href="packages.html#cb214-13"></a><span class="co"># execute the `ls` function with `e` as a parameter</span></span>
-<span id="cb214-14"><a href="packages.html#cb214-14"></a><span class="co">#ls(e)  # try directly on console!</span></span>
-<span id="cb214-15"><a href="packages.html#cb214-15"></a></span>
-<span id="cb214-16"><a href="packages.html#cb214-16"></a><span class="co"># print `x`</span></span>
-<span id="cb214-17"><a href="packages.html#cb214-17"></a>x</span>
-<span id="cb214-18"><a href="packages.html#cb214-18"></a></span>
-<span id="cb214-19"><a href="packages.html#cb214-19"></a><span class="co"># print `e$x`    (notice the list syntax!)</span></span>
-<span id="cb214-20"><a href="packages.html#cb214-20"></a>e<span class="op">$</span>x</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="packages.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a variable `e` which refers to the global environment</span></span>
+<span id="cb216-2"><a href="packages.html#cb216-2" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> .GlobalEnv  <span class="co"># or e &lt;- globalenv()</span></span>
+<span id="cb216-3"><a href="packages.html#cb216-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-4"><a href="packages.html#cb216-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print `e`</span></span>
+<span id="cb216-5"><a href="packages.html#cb216-5" aria-hidden="true" tabindex="-1"></a>e</span>
+<span id="cb216-6"><a href="packages.html#cb216-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-7"><a href="packages.html#cb216-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create a variable `x` and assign the number `5` to it</span></span>
+<span id="cb216-8"><a href="packages.html#cb216-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb216-9"><a href="packages.html#cb216-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-10"><a href="packages.html#cb216-10" aria-hidden="true" tabindex="-1"></a><span class="co"># execute the `ls` function, without parameters</span></span>
+<span id="cb216-11"><a href="packages.html#cb216-11" aria-hidden="true" tabindex="-1"></a><span class="co">#ls()  # try directly on console!</span></span>
+<span id="cb216-12"><a href="packages.html#cb216-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-13"><a href="packages.html#cb216-13" aria-hidden="true" tabindex="-1"></a><span class="co"># execute the `ls` function with `e` as a parameter</span></span>
+<span id="cb216-14"><a href="packages.html#cb216-14" aria-hidden="true" tabindex="-1"></a><span class="co">#ls(e)  # try directly on console!</span></span>
+<span id="cb216-15"><a href="packages.html#cb216-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-16"><a href="packages.html#cb216-16" aria-hidden="true" tabindex="-1"></a><span class="co"># print `x`</span></span>
+<span id="cb216-17"><a href="packages.html#cb216-17" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb216-18"><a href="packages.html#cb216-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb216-19"><a href="packages.html#cb216-19" aria-hidden="true" tabindex="-1"></a><span class="co"># print `e$x`    (notice the list syntax!)</span></span>
+<span id="cb216-20"><a href="packages.html#cb216-20" aria-hidden="true" tabindex="-1"></a>e<span class="sc">$</span>x</span></code></pre></div>
 <pre><code>## &lt;environment: R_GlobalEnv&gt;
 ## [1] 5
 ## [1] 5</code></pre>
@@ -502,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p>—–TU JE PROBLEM —–</p>
 <p>From the last example, we can see that the environment also references itself, so this is a completely correct (although unnecessarily complicated) syntax for printing the <code>x</code> variable:</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="packages.html#cb216-1"></a>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>e<span class="op">$</span>x</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="packages.html#cb218-1" aria-hidden="true" tabindex="-1"></a>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>e<span class="sc">$</span>x</span></code></pre></div>
 <p>The environments are somewhat similar to lists, meaning that they basically “encapsulate” a certain number of objects in a unique structure which then allows for refering to them byh names. The most important differences between environments and lists are:</p>
 <ul>
 <li>the <strong>order of elements</strong> in the environment is <strong>irrelevant</strong></li>
@@ -511,15 +490,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we have a reference to an environment, we can easily get a reference to its parent environment using the <code>parent.env</code> function.</p>
 <hr />
 <p><strong>Exercise 6.7 - parent environments</strong></p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="packages.html#cb217-1"></a><span class="co"># print out the parent environment of the global environment and explain the result</span></span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="packages.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print out the parent environment of the global environment and explain the result</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="packages.html#cb218-1"></a><span class="co"># print out the parent environment of the global environment and explain the result</span></span>
-<span id="cb218-2"><a href="packages.html#cb218-2"></a><span class="kw">parent.env</span>(e)</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="packages.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print out the parent environment of the global environment and explain the result</span></span>
+<span id="cb220-2"><a href="packages.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(e)</span></code></pre></div>
 <pre><code>## &lt;environment: package:lubridate&gt;
 ## attr(,&quot;name&quot;)
 ## [1] &quot;package:lubridate&quot;
 ## attr(,&quot;path&quot;)
-## [1] &quot;C:/R/R-4.1.2/library/lubridate&quot;</code></pre>
+## [1] &quot;C:/R/R-4.2.1/library/lubridate&quot;</code></pre>
 </div>
 <hr />
 <p>As we can see, the parent of the global environment is the last loaded package. This should not really be too unusual - the global environment has the largest “priority” when referencing the variables, but immediately below it are the objects and functions that we last loaded into the work environment (supporting the assumption that the “most recent” package is the one that we intend to use immediately). In other words, by loading a package, the new package is always “slotted in” between the global environment and the package that was previously loaded last. When we called the <code>search</code> function, what we actually got was the hierarchy of environments that represented all loaded packages in the order of their loading. In other words, the “search path” and “environment hierarchy” are basically the very same thing.</p>
@@ -533,27 +512,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Look at the example below to get the feeling how custom environments work.</p>
 <hr />
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="packages.html#cb220-1"></a><span class="co"># example - a small hierarchy of custom environments</span></span>
-<span id="cb220-2"><a href="packages.html#cb220-2"></a></span>
-<span id="cb220-3"><a href="packages.html#cb220-3"></a>e &lt;-<span class="st"> </span><span class="kw">emptyenv</span>()  <span class="co"># the empty environment</span></span>
-<span id="cb220-4"><a href="packages.html#cb220-4"></a>e2 &lt;-<span class="st"> </span><span class="kw">new.env</span>()</span>
-<span id="cb220-5"><a href="packages.html#cb220-5"></a>e3 &lt;-<span class="st"> </span><span class="kw">new.env</span>()</span>
-<span id="cb220-6"><a href="packages.html#cb220-6"></a></span>
-<span id="cb220-7"><a href="packages.html#cb220-7"></a><span class="co">#  hierarchy `e3` --&gt; `e2` --&gt; `e` (empty)</span></span>
-<span id="cb220-8"><a href="packages.html#cb220-8"></a><span class="kw">parent.env</span>(e2) &lt;-<span class="st"> </span>e       </span>
-<span id="cb220-9"><a href="packages.html#cb220-9"></a><span class="kw">parent.env</span>(e3) &lt;-<span class="st"> </span>e2</span>
-<span id="cb220-10"><a href="packages.html#cb220-10"></a></span>
-<span id="cb220-11"><a href="packages.html#cb220-11"></a><span class="co"># creating variable `x` in `e2`</span></span>
-<span id="cb220-12"><a href="packages.html#cb220-12"></a><span class="kw">assign</span>(<span class="st">&quot;x&quot;</span>, <span class="dv">5</span>, e2)     <span class="co">#  or e2$x &lt;- 5   </span></span>
-<span id="cb220-13"><a href="packages.html#cb220-13"></a></span>
-<span id="cb220-14"><a href="packages.html#cb220-14"></a><span class="co"># checking if there is an `x` in `e2`</span></span>
-<span id="cb220-15"><a href="packages.html#cb220-15"></a><span class="kw">exists</span>(<span class="st">&quot;x&quot;</span>, e2)</span>
-<span id="cb220-16"><a href="packages.html#cb220-16"></a></span>
-<span id="cb220-17"><a href="packages.html#cb220-17"></a><span class="co"># listing all variables from `e2`</span></span>
-<span id="cb220-18"><a href="packages.html#cb220-18"></a><span class="kw">ls</span>(e2)</span>
-<span id="cb220-19"><a href="packages.html#cb220-19"></a></span>
-<span id="cb220-20"><a href="packages.html#cb220-20"></a><span class="co"># printing `x` from `e3` (even though it doesn&#39;t exist there)</span></span>
-<span id="cb220-21"><a href="packages.html#cb220-21"></a><span class="kw">get</span>(<span class="st">&quot;x&quot;</span>, e3)       <span class="co"># or e3$x</span></span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="packages.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example - a small hierarchy of custom environments</span></span>
+<span id="cb222-2"><a href="packages.html#cb222-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-3"><a href="packages.html#cb222-3" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">emptyenv</span>()  <span class="co"># the empty environment</span></span>
+<span id="cb222-4"><a href="packages.html#cb222-4" aria-hidden="true" tabindex="-1"></a>e2 <span class="ot">&lt;-</span> <span class="fu">new.env</span>()</span>
+<span id="cb222-5"><a href="packages.html#cb222-5" aria-hidden="true" tabindex="-1"></a>e3 <span class="ot">&lt;-</span> <span class="fu">new.env</span>()</span>
+<span id="cb222-6"><a href="packages.html#cb222-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-7"><a href="packages.html#cb222-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  hierarchy `e3` --&gt; `e2` --&gt; `e` (empty)</span></span>
+<span id="cb222-8"><a href="packages.html#cb222-8" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(e2) <span class="ot">&lt;-</span> e       </span>
+<span id="cb222-9"><a href="packages.html#cb222-9" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(e3) <span class="ot">&lt;-</span> e2</span>
+<span id="cb222-10"><a href="packages.html#cb222-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-11"><a href="packages.html#cb222-11" aria-hidden="true" tabindex="-1"></a><span class="co"># creating variable `x` in `e2`</span></span>
+<span id="cb222-12"><a href="packages.html#cb222-12" aria-hidden="true" tabindex="-1"></a><span class="fu">assign</span>(<span class="st">&quot;x&quot;</span>, <span class="dv">5</span>, e2)     <span class="co">#  or e2$x &lt;- 5   </span></span>
+<span id="cb222-13"><a href="packages.html#cb222-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-14"><a href="packages.html#cb222-14" aria-hidden="true" tabindex="-1"></a><span class="co"># checking if there is an `x` in `e2`</span></span>
+<span id="cb222-15"><a href="packages.html#cb222-15" aria-hidden="true" tabindex="-1"></a><span class="fu">exists</span>(<span class="st">&quot;x&quot;</span>, e2)</span>
+<span id="cb222-16"><a href="packages.html#cb222-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-17"><a href="packages.html#cb222-17" aria-hidden="true" tabindex="-1"></a><span class="co"># listing all variables from `e2`</span></span>
+<span id="cb222-18"><a href="packages.html#cb222-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(e2)</span>
+<span id="cb222-19"><a href="packages.html#cb222-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-20"><a href="packages.html#cb222-20" aria-hidden="true" tabindex="-1"></a><span class="co"># printing `x` from `e3` (even though it doesn&#39;t exist there)</span></span>
+<span id="cb222-21"><a href="packages.html#cb222-21" aria-hidden="true" tabindex="-1"></a><span class="fu">get</span>(<span class="st">&quot;x&quot;</span>, e3)       <span class="co"># or e3$x</span></span></code></pre></div>
 <pre><code>## [1] TRUE
 ## [1] &quot;x&quot;
 ## [1] 5</code></pre>
@@ -562,62 +541,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Finally, let’s demonstrate the <code>attach</code> function that certain data analysts tended to use to speed up the analysis process and write more readable code, but which can cause serious problems if used improperly. This function basically insert the data frame’s reference directly into the search path, allowing us to refer to its columns as if they were variable names in the global environment, without the need to reference the data frame itself. This sounds convenient, but has some very unfortunate side effects, best shown through an exercise.</p>
 <hr />
 <p><strong>Exercise 6.8 - <code>attach</code> function</strong></p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="packages.html#cb222-1"></a>cities &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">zipcode =</span> <span class="kw">c</span>(<span class="dv">10000</span>, <span class="dv">51000</span>, <span class="dv">21000</span>, <span class="dv">31000</span>, <span class="dv">2000</span>),</span>
-<span id="cb222-2"><a href="packages.html#cb222-2"></a>         <span class="dt">cityName =</span> <span class="kw">c</span>(<span class="st">&quot;Zagreb&quot;</span>, <span class="st">&quot;Rijeka&quot;</span>, <span class="st">&quot;Split&quot;</span>, <span class="st">&quot;Osijek&quot;</span>, <span class="st">&quot;Dubrovnik&quot;</span>),</span>
-<span id="cb222-3"><a href="packages.html#cb222-3"></a>         <span class="dt">avgSalary =</span> <span class="kw">c</span>(<span class="fl">6359.</span>, <span class="fl">5418.</span>, <span class="fl">5170.</span>, <span class="fl">4892.</span>, <span class="fl">5348.</span>),</span>
-<span id="cb222-4"><a href="packages.html#cb222-4"></a>         <span class="dt">population =</span> <span class="kw">c</span>(<span class="dv">790017</span>, <span class="dv">128384</span>, <span class="dv">167121</span>, <span class="dv">84104</span>, <span class="dv">28434</span>),</span>
-<span id="cb222-5"><a href="packages.html#cb222-5"></a>         <span class="dt">tax =</span> <span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">10</span>))</span>
-<span id="cb222-6"><a href="packages.html#cb222-6"></a></span>
-<span id="cb222-7"><a href="packages.html#cb222-7"></a><span class="co"># execute function `attach` with `cities` as parameter</span></span>
-<span id="cb222-8"><a href="packages.html#cb222-8"></a><span class="co"># do this only once!</span></span>
-<span id="cb222-9"><a href="packages.html#cb222-9"></a></span>
-<span id="cb222-10"><a href="packages.html#cb222-10"></a></span>
-<span id="cb222-11"><a href="packages.html#cb222-11"></a><span class="co"># print the search path and comment on the result</span></span>
-<span id="cb222-12"><a href="packages.html#cb222-12"></a></span>
-<span id="cb222-13"><a href="packages.html#cb222-13"></a></span>
-<span id="cb222-14"><a href="packages.html#cb222-14"></a><span class="co"># print the `tax` &quot;variable&quot; </span></span>
-<span id="cb222-15"><a href="packages.html#cb222-15"></a></span>
-<span id="cb222-16"><a href="packages.html#cb222-16"></a></span>
-<span id="cb222-17"><a href="packages.html#cb222-17"></a><span class="co"># change the third element from the `tax` variable from 10 to 12</span></span>
-<span id="cb222-18"><a href="packages.html#cb222-18"></a></span>
-<span id="cb222-19"><a href="packages.html#cb222-19"></a></span>
-<span id="cb222-20"><a href="packages.html#cb222-20"></a><span class="co"># print `cities`. Why is the tax in the 3rd row still 10?</span></span>
-<span id="cb222-21"><a href="packages.html#cb222-21"></a></span>
-<span id="cb222-22"><a href="packages.html#cb222-22"></a></span>
-<span id="cb222-23"><a href="packages.html#cb222-23"></a><span class="co"># execute the `ls` function</span></span>
-<span id="cb222-24"><a href="packages.html#cb222-24"></a></span>
-<span id="cb222-25"><a href="packages.html#cb222-25"></a></span>
-<span id="cb222-26"><a href="packages.html#cb222-26"></a><span class="co"># use the `detach` function to remove `cities` from the search path</span></span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="packages.html#cb224-1" aria-hidden="true" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">zipcode =</span> <span class="fu">c</span>(<span class="dv">10000</span>, <span class="dv">51000</span>, <span class="dv">21000</span>, <span class="dv">31000</span>, <span class="dv">2000</span>),</span>
+<span id="cb224-2"><a href="packages.html#cb224-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">cityName =</span> <span class="fu">c</span>(<span class="st">&quot;Zagreb&quot;</span>, <span class="st">&quot;Rijeka&quot;</span>, <span class="st">&quot;Split&quot;</span>, <span class="st">&quot;Osijek&quot;</span>, <span class="st">&quot;Dubrovnik&quot;</span>),</span>
+<span id="cb224-3"><a href="packages.html#cb224-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">avgSalary =</span> <span class="fu">c</span>(<span class="fl">6359.</span>, <span class="fl">5418.</span>, <span class="fl">5170.</span>, <span class="fl">4892.</span>, <span class="fl">5348.</span>),</span>
+<span id="cb224-4"><a href="packages.html#cb224-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">population =</span> <span class="fu">c</span>(<span class="dv">790017</span>, <span class="dv">128384</span>, <span class="dv">167121</span>, <span class="dv">84104</span>, <span class="dv">28434</span>),</span>
+<span id="cb224-5"><a href="packages.html#cb224-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">tax =</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">10</span>))</span>
+<span id="cb224-6"><a href="packages.html#cb224-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-7"><a href="packages.html#cb224-7" aria-hidden="true" tabindex="-1"></a><span class="co"># execute function `attach` with `cities` as parameter</span></span>
+<span id="cb224-8"><a href="packages.html#cb224-8" aria-hidden="true" tabindex="-1"></a><span class="co"># do this only once!</span></span>
+<span id="cb224-9"><a href="packages.html#cb224-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-10"><a href="packages.html#cb224-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-11"><a href="packages.html#cb224-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print the search path and comment on the result</span></span>
+<span id="cb224-12"><a href="packages.html#cb224-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-13"><a href="packages.html#cb224-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-14"><a href="packages.html#cb224-14" aria-hidden="true" tabindex="-1"></a><span class="co"># print the `tax` &quot;variable&quot; </span></span>
+<span id="cb224-15"><a href="packages.html#cb224-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-16"><a href="packages.html#cb224-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-17"><a href="packages.html#cb224-17" aria-hidden="true" tabindex="-1"></a><span class="co"># change the third element from the `tax` variable from 10 to 12</span></span>
+<span id="cb224-18"><a href="packages.html#cb224-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-19"><a href="packages.html#cb224-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-20"><a href="packages.html#cb224-20" aria-hidden="true" tabindex="-1"></a><span class="co"># print `cities`. Why is the tax in the 3rd row still 10?</span></span>
+<span id="cb224-21"><a href="packages.html#cb224-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-22"><a href="packages.html#cb224-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-23"><a href="packages.html#cb224-23" aria-hidden="true" tabindex="-1"></a><span class="co"># execute the `ls` function</span></span>
+<span id="cb224-24"><a href="packages.html#cb224-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-25"><a href="packages.html#cb224-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-26"><a href="packages.html#cb224-26" aria-hidden="true" tabindex="-1"></a><span class="co"># use the `detach` function to remove `cities` from the search path</span></span></code></pre></div>
 <div class="fold s o">
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="packages.html#cb223-1"></a><span class="co"># execute function `attach` with `cities` as parameter</span></span>
-<span id="cb223-2"><a href="packages.html#cb223-2"></a><span class="co"># do this only once!</span></span>
-<span id="cb223-3"><a href="packages.html#cb223-3"></a><span class="kw">attach</span>(cities)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="packages.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co"># execute function `attach` with `cities` as parameter</span></span>
+<span id="cb225-2"><a href="packages.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="co"># do this only once!</span></span>
+<span id="cb225-3"><a href="packages.html#cb225-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(cities)</span></code></pre></div>
 <pre><code>## The following object is masked from package:tidyr:
 ## 
 ##     population</code></pre>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="packages.html#cb225-1"></a><span class="co"># print the search path and comment on the result</span></span>
-<span id="cb225-2"><a href="packages.html#cb225-2"></a><span class="kw">search</span>()</span>
-<span id="cb225-3"><a href="packages.html#cb225-3"></a></span>
-<span id="cb225-4"><a href="packages.html#cb225-4"></a><span class="kw">cat</span>(<span class="st">&quot;-------------------------</span><span class="ch">\n</span><span class="st">&quot;</span>)    </span>
-<span id="cb225-5"><a href="packages.html#cb225-5"></a></span>
-<span id="cb225-6"><a href="packages.html#cb225-6"></a><span class="co"># print the `zipcode` variable </span></span>
-<span id="cb225-7"><a href="packages.html#cb225-7"></a>tax</span>
-<span id="cb225-8"><a href="packages.html#cb225-8"></a></span>
-<span id="cb225-9"><a href="packages.html#cb225-9"></a><span class="kw">cat</span>(<span class="st">&quot;-------------------------</span><span class="ch">\n</span><span class="st">&quot;</span>)    </span>
-<span id="cb225-10"><a href="packages.html#cb225-10"></a></span>
-<span id="cb225-11"><a href="packages.html#cb225-11"></a><span class="co"># change the third element from the `tax` variable to 12</span></span>
-<span id="cb225-12"><a href="packages.html#cb225-12"></a>tax[<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="dv">12</span></span>
-<span id="cb225-13"><a href="packages.html#cb225-13"></a></span>
-<span id="cb225-14"><a href="packages.html#cb225-14"></a><span class="co"># print `cities`</span></span>
-<span id="cb225-15"><a href="packages.html#cb225-15"></a>cities</span>
-<span id="cb225-16"><a href="packages.html#cb225-16"></a></span>
-<span id="cb225-17"><a href="packages.html#cb225-17"></a><span class="kw">cat</span>(<span class="st">&quot;-------------------------</span><span class="ch">\n</span><span class="st">&quot;</span>)    </span>
-<span id="cb225-18"><a href="packages.html#cb225-18"></a></span>
-<span id="cb225-19"><a href="packages.html#cb225-19"></a><span class="co"># execute the `ls` function</span></span>
-<span id="cb225-20"><a href="packages.html#cb225-20"></a><span class="co">#ls()  # try it on console!</span></span>
-<span id="cb225-21"><a href="packages.html#cb225-21"></a></span>
-<span id="cb225-22"><a href="packages.html#cb225-22"></a><span class="co"># use the `detach` function to remove `cities` from the search path</span></span>
-<span id="cb225-23"><a href="packages.html#cb225-23"></a><span class="kw">detach</span>(cities)</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="packages.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print the search path and comment on the result</span></span>
+<span id="cb227-2"><a href="packages.html#cb227-2" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span>
+<span id="cb227-3"><a href="packages.html#cb227-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-4"><a href="packages.html#cb227-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;-------------------------</span><span class="sc">\n</span><span class="st">&quot;</span>)    </span>
+<span id="cb227-5"><a href="packages.html#cb227-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-6"><a href="packages.html#cb227-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print the `zipcode` variable </span></span>
+<span id="cb227-7"><a href="packages.html#cb227-7" aria-hidden="true" tabindex="-1"></a>tax</span>
+<span id="cb227-8"><a href="packages.html#cb227-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-9"><a href="packages.html#cb227-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;-------------------------</span><span class="sc">\n</span><span class="st">&quot;</span>)    </span>
+<span id="cb227-10"><a href="packages.html#cb227-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-11"><a href="packages.html#cb227-11" aria-hidden="true" tabindex="-1"></a><span class="co"># change the third element from the `tax` variable to 12</span></span>
+<span id="cb227-12"><a href="packages.html#cb227-12" aria-hidden="true" tabindex="-1"></a>tax[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb227-13"><a href="packages.html#cb227-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-14"><a href="packages.html#cb227-14" aria-hidden="true" tabindex="-1"></a><span class="co"># print `cities`</span></span>
+<span id="cb227-15"><a href="packages.html#cb227-15" aria-hidden="true" tabindex="-1"></a>cities</span>
+<span id="cb227-16"><a href="packages.html#cb227-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-17"><a href="packages.html#cb227-17" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;-------------------------</span><span class="sc">\n</span><span class="st">&quot;</span>)    </span>
+<span id="cb227-18"><a href="packages.html#cb227-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-19"><a href="packages.html#cb227-19" aria-hidden="true" tabindex="-1"></a><span class="co"># execute the `ls` function</span></span>
+<span id="cb227-20"><a href="packages.html#cb227-20" aria-hidden="true" tabindex="-1"></a><span class="co">#ls()  # try it on console!</span></span>
+<span id="cb227-21"><a href="packages.html#cb227-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb227-22"><a href="packages.html#cb227-22" aria-hidden="true" tabindex="-1"></a><span class="co"># use the `detach` function to remove `cities` from the search path</span></span>
+<span id="cb227-23"><a href="packages.html#cb227-23" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(cities)</span></code></pre></div>
 <pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;cities&quot;            &quot;package:lubridate&quot;
 ##  [4] &quot;package:GGally&quot;    &quot;package:forcats&quot;   &quot;package:stringr&quot;  
 ##  [7] &quot;package:dplyr&quot;     &quot;package:purrr&quot;     &quot;package:readr&quot;    
@@ -648,10 +627,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Load the following packages in the working environment: <code>magrittr</code>, <code>dplyr</code>, <code>tidyr</code>,<code>ggplot2</code>. Print the search path and check where the loaded packages are.</p></li>
 <li><p>The following commands will create a vector of 20 randomly selected natural numbers from 1 to 100.</p></li>
 </ol>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="packages.html#cb227-1"></a><span class="co"># 20 random natural numbers from 1 to 100, with repetition</span></span>
-<span id="cb227-2"><a href="packages.html#cb227-2"></a></span>
-<span id="cb227-3"><a href="packages.html#cb227-3"></a><span class="kw">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb227-4"><a href="packages.html#cb227-4"></a>a &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">20</span>, <span class="dt">replace =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="packages.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 20 random natural numbers from 1 to 100, with repetition</span></span>
+<span id="cb229-2"><a href="packages.html#cb229-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb229-3"><a href="packages.html#cb229-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb229-4"><a href="packages.html#cb229-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">20</span>, <span class="at">replace =</span> T)</span></code></pre></div>
 <p>Use the cheat sheets and/or official documentation to find built-in functions that perform the following tasks.</p>
 <p>Print</p>
 <ul>

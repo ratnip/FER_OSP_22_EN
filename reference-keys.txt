@@ -82,3 +82,13 @@ the-lubridate-package
 working-with-character-strings
 text-analysis-and-regular-expressions
 the-stringr-package
+dplyr
+data-wrangling-with-package-dplyr
+dataset-titanic
+creating-a-subset-of-observations-with-filter-andslice
+creating-a-subset-of-columns-with-select
+creating-new-columns-with-mutate
+sample-dataset-houston-flights
+grouping-and-aggregation-with-group_by-andsummarise
+merging-data-frames-with-join-functions
+integrating-dplyr-with-relational-databases

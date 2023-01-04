@@ -23,7 +23,7 @@
 <meta name="author" content="Damir Pintar" />
 
 
-<meta name="date" content="2022-12-14" />
+<meta name="date" content="2023-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -377,6 +377,37 @@ div.csl-indent {
 <li class="chapter" data-level="11.9" data-path="dplyr.html"><a href="dplyr.html#integrating-dplyr-with-relational-databases"><i class="fa fa-check"></i><b>11.9</b> Integrating <code>dplyr</code> with relational databases</a></li>
 <li class="chapter" data-level="" data-path="dplyr.html"><a href="dplyr.html#homework-exercises-9"><i class="fa fa-check"></i>Homework exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>12</b> Visualising data with <code>ggplot2</code> package</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ggplot2.html"><a href="ggplot2.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>12.1</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="12.2" data-path="ggplot2.html"><a href="ggplot2.html#data-visualization-using-the-r-language"><i class="fa fa-check"></i><b>12.2</b> Data visualization using the R language</a></li>
+<li class="chapter" data-level="12.3" data-path="ggplot2.html"><a href="ggplot2.html#grammar-of-graphics-and-the-ggplot2-package"><i class="fa fa-check"></i><b>12.3</b> Grammar of graphics and the <code>ggplot2</code> package</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="ggplot2.html"><a href="ggplot2.html#aspects-of-data-aesthetics-and-geometries"><i class="fa fa-check"></i><b>12.3.1</b> Aspects of data, aesthetics and geometries</a></li>
+<li class="chapter" data-level="12.3.2" data-path="ggplot2.html"><a href="ggplot2.html#fixed-geometry-parameters"><i class="fa fa-check"></i><b>12.3.2</b> Fixed geometry parameters</a></li>
+<li class="chapter" data-level="12.3.3" data-path="ggplot2.html"><a href="ggplot2.html#the-aspects-of-statistics-and-position"><i class="fa fa-check"></i><b>12.3.3</b> The aspects of statistics and position</a></li>
+<li class="chapter" data-level="12.3.4" data-path="ggplot2.html"><a href="ggplot2.html#the-relationship-between-geometry-and-statistics"><i class="fa fa-check"></i><b>12.3.4</b> The relationship between geometry and statistics</a></li>
+<li class="chapter" data-level="12.3.5" data-path="ggplot2.html"><a href="ggplot2.html#storing-a-graph-to-a-file"><i class="fa fa-check"></i><b>12.3.5</b> Storing a graph to a file</a></li>
+<li class="chapter" data-level="12.3.6" data-path="ggplot2.html"><a href="ggplot2.html#aspects-of-scale-coordinate-system-and-theme"><i class="fa fa-check"></i><b>12.3.6</b> Aspects of scale, coordinate system and theme</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="ggplot2.html"><a href="ggplot2.html#tu"><i class="fa fa-check"></i><b>12.4</b> TU</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="ggplot2.html"><a href="ggplot2.html#conditional-faceted-graphs"><i class="fa fa-check"></i><b>12.4.1</b> Conditional (faceted) graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="ggplot2.html"><a href="ggplot2.html#graphs-in-exploratory-analysis-and-reporting"><i class="fa fa-check"></i><b>12.5</b> Graphs in Exploratory Analysis and Reporting</a></li>
+<li class="chapter" data-level="" data-path="ggplot2.html"><a href="ggplot2.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>13</b> Selected Machine Learning Methods: Regression Analysis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="regression.html"><a href="regression.html#machine-learning---a-short-introduction"><i class="fa fa-check"></i><b>13.1</b> Machine learning - a short introduction</a></li>
+<li class="chapter" data-level="13.2" data-path="regression.html"><a href="regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>13.2</b> Simple linear regression</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="regression.html"><a href="regression.html#the-lm-function"><i class="fa fa-check"></i><b>13.2.1</b> The <code>lm</code> function</a></li>
+<li class="chapter" data-level="13.2.2" data-path="regression.html"><a href="regression.html#linear-regression-and-categorical-variables"><i class="fa fa-check"></i><b>13.2.2</b> Linear regression and categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="regression.html"><a href="regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>13.3</b> Multiple linear regression</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#homework-exercises-10"><i class="fa fa-check"></i>Homework exercises</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -410,13 +441,18 @@ div.csl-indent {
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="packages.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co"># call the `search` function (no parameters) </span></span>
 <span id="cb199-2"><a href="packages.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to see which packages are loaded into the environment</span></span>
 <span id="cb199-3"><a href="packages.html#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;package:lubridate&quot; &quot;package:GGally&quot;   
-##  [4] &quot;package:forcats&quot;   &quot;package:stringr&quot;   &quot;package:dplyr&quot;    
-##  [7] &quot;package:purrr&quot;     &quot;package:readr&quot;     &quot;package:tidyr&quot;    
-## [10] &quot;package:tibble&quot;    &quot;package:ggplot2&quot;   &quot;package:tidyverse&quot;
-## [13] &quot;package:MASS&quot;      &quot;package:stats&quot;     &quot;package:graphics&quot; 
-## [16] &quot;package:grDevices&quot; &quot;package:utils&quot;     &quot;package:datasets&quot; 
-## [19] &quot;package:methods&quot;   &quot;Autoloads&quot;         &quot;package:base&quot;</code></pre>
+<pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;package:corrplot&quot;  &quot;package:broom&quot;    
+##  [4] &quot;package:caret&quot;     &quot;package:e1071&quot;     &quot;package:car&quot;      
+##  [7] &quot;package:carData&quot;   &quot;package:Hmisc&quot;     &quot;package:Formula&quot;  
+## [10] &quot;package:survival&quot;  &quot;package:lattice&quot;   &quot;package:sn&quot;       
+## [13] &quot;package:stats4&quot;    &quot;package:gridExtra&quot; &quot;package:hflights&quot; 
+## [16] &quot;package:lubridate&quot; &quot;package:GGally&quot;    &quot;package:forcats&quot;  
+## [19] &quot;package:stringr&quot;   &quot;package:dplyr&quot;     &quot;package:purrr&quot;    
+## [22] &quot;package:readr&quot;     &quot;package:tidyr&quot;     &quot;package:tibble&quot;   
+## [25] &quot;package:ggplot2&quot;   &quot;package:tidyverse&quot; &quot;package:MASS&quot;     
+## [28] &quot;package:stats&quot;     &quot;package:graphics&quot;  &quot;package:grDevices&quot;
+## [31] &quot;package:utils&quot;     &quot;package:datasets&quot;  &quot;package:methods&quot;  
+## [34] &quot;Autoloads&quot;         &quot;package:base&quot;</code></pre>
 </div>
 <hr />
 <p>We see that most packages are listed as <code>package::package_name</code>. The positioning of the package name in the list also represents their “priority” in the namespace traversal path, which will be discussed later.</p>
@@ -454,13 +490,18 @@ div.csl-indent {
 <div class="fold s o">
 <div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="packages.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print the search path</span></span>
 <span id="cb205-2"><a href="packages.html#cb205-2" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;package:lubridate&quot; &quot;package:GGally&quot;   
-##  [4] &quot;package:forcats&quot;   &quot;package:stringr&quot;   &quot;package:dplyr&quot;    
-##  [7] &quot;package:purrr&quot;     &quot;package:readr&quot;     &quot;package:tidyr&quot;    
-## [10] &quot;package:tibble&quot;    &quot;package:ggplot2&quot;   &quot;package:tidyverse&quot;
-## [13] &quot;package:MASS&quot;      &quot;package:stats&quot;     &quot;package:graphics&quot; 
-## [16] &quot;package:grDevices&quot; &quot;package:utils&quot;     &quot;package:datasets&quot; 
-## [19] &quot;package:methods&quot;   &quot;Autoloads&quot;         &quot;package:base&quot;</code></pre>
+<pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;package:corrplot&quot;  &quot;package:broom&quot;    
+##  [4] &quot;package:caret&quot;     &quot;package:e1071&quot;     &quot;package:car&quot;      
+##  [7] &quot;package:carData&quot;   &quot;package:Hmisc&quot;     &quot;package:Formula&quot;  
+## [10] &quot;package:survival&quot;  &quot;package:lattice&quot;   &quot;package:sn&quot;       
+## [13] &quot;package:stats4&quot;    &quot;package:gridExtra&quot; &quot;package:hflights&quot; 
+## [16] &quot;package:lubridate&quot; &quot;package:GGally&quot;    &quot;package:forcats&quot;  
+## [19] &quot;package:stringr&quot;   &quot;package:dplyr&quot;     &quot;package:purrr&quot;    
+## [22] &quot;package:readr&quot;     &quot;package:tidyr&quot;     &quot;package:tibble&quot;   
+## [25] &quot;package:ggplot2&quot;   &quot;package:tidyverse&quot; &quot;package:MASS&quot;     
+## [28] &quot;package:stats&quot;     &quot;package:graphics&quot;  &quot;package:grDevices&quot;
+## [31] &quot;package:utils&quot;     &quot;package:datasets&quot;  &quot;package:methods&quot;  
+## [34] &quot;Autoloads&quot;         &quot;package:base&quot;</code></pre>
 </div>
 <p>The <code>install.packages</code> function has many additional parameters which might be a good idea to check, especially if certain problems arise while using the package. For example, setting the <code>dependencies</code> parameter to <code>TRUE</code> will explicitly state that all packages that the new package being installed is depending on need to be installed, too, if for some reason they didn’t get installed during the first installation try.</p>
 <p>Note: as a rule, we install packages only once, through the console so that there is never a need to install the package installations in <em>R Markdown</em> documents; also, for easier organization of reports, loading all required packages is usually done by at the beginning of the document, in the code snippet called <code>setup</code>. If we want to update packages, one of the easiest way to do this is to simply install them again (caution: if there is a huge discrepancy between package versions, this can cause issues with the code).</p>
@@ -586,11 +627,11 @@ div.csl-indent {
 <div class="fold s o">
 <div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="packages.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print out the parent environment of the global environment and explain the result</span></span>
 <span id="cb220-2"><a href="packages.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">parent.env</span>(e)</span></code></pre></div>
-<pre><code>## &lt;environment: package:lubridate&gt;
+<pre><code>## &lt;environment: package:corrplot&gt;
 ## attr(,&quot;name&quot;)
-## [1] &quot;package:lubridate&quot;
+## [1] &quot;package:corrplot&quot;
 ## attr(,&quot;path&quot;)
-## [1] &quot;C:/R/R-4.2.1/library/lubridate&quot;</code></pre>
+## [1] &quot;C:/R/R-4.2.1/library/corrplot&quot;</code></pre>
 </div>
 <hr />
 <p>As we can see, the parent of the global environment is the last loaded package. This should not really be too unusual - the global environment has the largest “priority” when referencing the variables, but immediately below it are the objects and functions that we last loaded into the work environment (supporting the assumption that the “most recent” package is the one that we intend to use immediately). In other words, by loading a package, the new package is always “slotted in” between the global environment and the package that was previously loaded last. When we called the <code>search</code> function, what we actually got was the hierarchy of environments that represented all loaded packages in the order of their loading. In other words, the “search path” and “environment hierarchy” are basically the very same thing.</p>
@@ -689,14 +730,18 @@ div.csl-indent {
 <span id="cb227-21"><a href="packages.html#cb227-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb227-22"><a href="packages.html#cb227-22" aria-hidden="true" tabindex="-1"></a><span class="co"># use the `detach` function to remove `cities` from the search path</span></span>
 <span id="cb227-23"><a href="packages.html#cb227-23" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(cities)</span></code></pre></div>
-<pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;cities&quot;            &quot;package:lubridate&quot;
-##  [4] &quot;package:GGally&quot;    &quot;package:forcats&quot;   &quot;package:stringr&quot;  
-##  [7] &quot;package:dplyr&quot;     &quot;package:purrr&quot;     &quot;package:readr&quot;    
-## [10] &quot;package:tidyr&quot;     &quot;package:tibble&quot;    &quot;package:ggplot2&quot;  
-## [13] &quot;package:tidyverse&quot; &quot;package:MASS&quot;      &quot;package:stats&quot;    
-## [16] &quot;package:graphics&quot;  &quot;package:grDevices&quot; &quot;package:utils&quot;    
-## [19] &quot;package:datasets&quot;  &quot;package:methods&quot;   &quot;Autoloads&quot;        
-## [22] &quot;package:base&quot;     
+<pre><code>##  [1] &quot;.GlobalEnv&quot;        &quot;cities&quot;            &quot;package:corrplot&quot; 
+##  [4] &quot;package:broom&quot;     &quot;package:caret&quot;     &quot;package:e1071&quot;    
+##  [7] &quot;package:car&quot;       &quot;package:carData&quot;   &quot;package:Hmisc&quot;    
+## [10] &quot;package:Formula&quot;   &quot;package:survival&quot;  &quot;package:lattice&quot;  
+## [13] &quot;package:sn&quot;        &quot;package:stats4&quot;    &quot;package:gridExtra&quot;
+## [16] &quot;package:hflights&quot;  &quot;package:lubridate&quot; &quot;package:GGally&quot;   
+## [19] &quot;package:forcats&quot;   &quot;package:stringr&quot;   &quot;package:dplyr&quot;    
+## [22] &quot;package:purrr&quot;     &quot;package:readr&quot;     &quot;package:tidyr&quot;    
+## [25] &quot;package:tibble&quot;    &quot;package:ggplot2&quot;   &quot;package:tidyverse&quot;
+## [28] &quot;package:MASS&quot;      &quot;package:stats&quot;     &quot;package:graphics&quot; 
+## [31] &quot;package:grDevices&quot; &quot;package:utils&quot;     &quot;package:datasets&quot; 
+## [34] &quot;package:methods&quot;   &quot;Autoloads&quot;         &quot;package:base&quot;     
 ## -------------------------
 ## [1] 18 15 10 13 10
 ## -------------------------

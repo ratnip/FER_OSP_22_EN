@@ -23,7 +23,7 @@
 <meta name="author" content="Damir Pintar" />
 
 
-<meta name="date" content="2023-01-04" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -408,6 +408,13 @@ div.csl-indent {
 <li class="chapter" data-level="13.3" data-path="regression.html"><a href="regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>13.3</b> Multiple linear regression</a></li>
 <li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#homework-exercises-10"><i class="fa fa-check"></i>Homework exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html"><i class="fa fa-check"></i><b>14</b> Introduction to Predictive Modeling</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#what-is-predictive-modeling"><i class="fa fa-check"></i><b>14.1</b> What is predictive modeling?</a></li>
+<li class="chapter" data-level="14.2" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#creating-training-and-test-datasets"><i class="fa fa-check"></i><b>14.2</b> Creating training and test datasets</a></li>
+<li class="chapter" data-level="14.3" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#classification-predictive-models---knn-classification"><i class="fa fa-check"></i><b>14.3</b> Classification Predictive Models - kNN Classification</a></li>
+<li class="chapter" data-level="14.4" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#package-caret-and-predictive-modeling"><i class="fa fa-check"></i><b>14.4</b> Package <code>caret</code> and predictive modeling</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -753,16 +760,15 @@ div.csl-indent {
 ## 5      2            2
 ## 6      5            5
 ## # A tibble: 6 × 10
-##   JMBAG Surname Name   Math.1 Physics.1 Digital…¹ Math.2 Algor…² Progr…³ Elect…⁴
-##   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;     &lt;int&gt;     &lt;int&gt;  &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt;
-## 1  1341 Anić    Iva         2         2         4      2       2      NA      NA
-## 2  1342 Babić   Josip       5         3        NA      5       5       4       3
-## 3  1343 Crnoja  Petra       4         3         3      4       3       4       2
-## 4  1344 Črnjac  Lucija      2         5         3      3       4       2       2
-## 5  1345 Dizla   Stipe      NA         4         2      2       2       3       5
-## 6  1346 Ermić   Igor       NA         3         5      5       5      NA       5
-## # … with abbreviated variable names ¹​Digital.Logic, ²​Algorithms.1,
-## #   ³​Programming, ⁴​Electronics
+##   JMBAG Surname Name   Math.1 Physics.1 Digital.Logic Math.2 Algorithms.1
+##   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;     &lt;int&gt;         &lt;int&gt;  &lt;int&gt;        &lt;int&gt;
+## 1  1341 Anić    Iva         2         2             4      2            2
+## 2  1342 Babić   Josip       5         3            NA      5            5
+## 3  1343 Crnoja  Petra       4         3             3      4            3
+## 4  1344 Črnjac  Lucija      2         5             3      3            4
+## 5  1345 Dizla   Stipe      NA         4             2      2            2
+## 6  1346 Ermić   Igor       NA         3             5      5            5
+## # … with 2 more variables: Programming &lt;int&gt;, Electronics &lt;int&gt;
 ## &#39;data.frame&#39;:    27 obs. of  10 variables:
 ##  $ JMBAG        : int  1341 1342 1343 1344 1345 1346 1347 1348 1349 1350 ...
 ##  $ Surname      : chr  &quot;Anić&quot; &quot;Babić&quot; &quot;Crnoja&quot; &quot;Črnjac&quot; ...
@@ -949,19 +955,19 @@ div.csl-indent {
 <span id="cb371-5"><a href="pipe.html#cb371-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(invoicesWide)</span>
 <span id="cb371-6"><a href="pipe.html#cb371-6" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(invoicesWide, <span class="at">file =</span> <span class="st">&#39;ConsumerBasketWide.csv&#39;</span>, <span class="at">row.names =</span> F)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 21
-##   invoi…¹ Dark.…² Apples Ketchup Mustard Tuna.…³ Coca.…⁴ Nutel…⁵ Light…⁶ Milk.…⁷
-##     &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1   15671       1      1       1       1       1       0       0       0       0
-## 2   15672       0      0       0       0       1       1       1       1       1
-## 3   15673       0      0       0       0       1       1       0       0       0
-## 4   15674       1      1       1       0       0       0       0       0       1
-## 5   15675       0      0       0       0       0       1       1       0       1
-## 6   15676       0      0       0       0       1       0       0       0       0
-## # … with 11 more variables: Sour.Cream &lt;dbl&gt;, Chips.150g &lt;dbl&gt;, Water.2l &lt;dbl&gt;,
+##   invoiceID Dark.Beer Apples Ketchup Mustard Tuna.patte Coca.cola.2l
+##       &lt;int&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+## 1     15671         1      1       1       1          1            0
+## 2     15672         0      0       0       0          1            1
+## 3     15673         0      0       0       0          1            1
+## 4     15674         1      1       1       0          0            0
+## 5     15675         0      0       0       0          0            1
+## 6     15676         0      0       0       0          1            0
+## # … with 14 more variables: Nutella.400.g &lt;dbl&gt;, Light.Beer &lt;dbl&gt;,
+## #   Milk.0.5l &lt;dbl&gt;, Sour.Cream &lt;dbl&gt;, Chips.150g &lt;dbl&gt;, Water.2l &lt;dbl&gt;,
 ## #   Pineapples &lt;dbl&gt;, Patte &lt;dbl&gt;, Nescaffe &lt;dbl&gt;, Oranges &lt;dbl&gt;,
 ## #   Feta.cheese &lt;dbl&gt;, Napkins &lt;dbl&gt;, Fabric.Softener.1.5l &lt;dbl&gt;,
-## #   Sardines &lt;dbl&gt;, and abbreviated variable names ¹​invoiceID, ²​Dark.Beer,
-## #   ³​Tuna.patte, ⁴​Coca.cola.2l, ⁵​Nutella.400.g, ⁶​Light.Beer, ⁷​Milk.0.5l</code></pre>
+## #   Sardines &lt;dbl&gt;</code></pre>
 </div>
 <hr />
 </div>

@@ -113,3 +113,8 @@ simple-linear-regression
 the-lm-function
 linear-regression-and-categorical-variables
 multiple-linear-regression
+predictive_Modeling
+what-is-predictive-modeling
+creating-training-and-test-datasets
+classification-predictive-models---knn-classification
+package-caret-and-predictive-modeling

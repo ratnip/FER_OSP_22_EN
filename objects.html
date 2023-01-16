@@ -23,7 +23,7 @@
 <meta name="author" content="Damir Pintar" />
 
 
-<meta name="date" content="2023-01-04" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -408,6 +408,13 @@ div.csl-indent {
 <li class="chapter" data-level="13.3" data-path="regression.html"><a href="regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>13.3</b> Multiple linear regression</a></li>
 <li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#homework-exercises-10"><i class="fa fa-check"></i>Homework exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html"><i class="fa fa-check"></i><b>14</b> Introduction to Predictive Modeling</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#what-is-predictive-modeling"><i class="fa fa-check"></i><b>14.1</b> What is predictive modeling?</a></li>
+<li class="chapter" data-level="14.2" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#creating-training-and-test-datasets"><i class="fa fa-check"></i><b>14.2</b> Creating training and test datasets</a></li>
+<li class="chapter" data-level="14.3" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#classification-predictive-models---knn-classification"><i class="fa fa-check"></i><b>14.3</b> Classification Predictive Models - kNN Classification</a></li>
+<li class="chapter" data-level="14.4" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#package-caret-and-predictive-modeling"><i class="fa fa-check"></i><b>14.4</b> Package <code>caret</code> and predictive modeling</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -546,7 +553,7 @@ div.csl-indent {
 ## 
 ## function (object, ...) 
 ## standardGeneric(&quot;summary&quot;)
-## &lt;environment: 0x00000176a75fa410&gt;
+## &lt;environment: 0x000002b492941588&gt;
 ## Methods may be defined for arguments: object
 ## Use  showMethods(summary)  for currently available ones.
 ## function (object, maxsum = 100L, ...) 
@@ -567,7 +574,7 @@ div.csl-indent {
 ##         c(tt, `NA&#39;s` = sum(nas))
 ##     else tt
 ## }
-## &lt;bytecode: 0x00000176b33266a8&gt;
+## &lt;bytecode: 0x000002b49fbe87b0&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 </div>
 <div id="adding-generic-functions-to-an-object" class="section level2 hasAnchor" number="8.4">
@@ -660,7 +667,7 @@ div.csl-indent {
 <span id="cb312-12"><a href="objects.html#cb312-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(peter)</span></code></pre></div>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;print&quot;)
-## &lt;bytecode: 0x00000176a2c11930&gt;
+## &lt;bytecode: 0x000002b48e0f8538&gt;
 ## &lt;environment: namespace:base&gt;
 ## ID:12345678, surname:Parker, weight:78</code></pre>
 </div>
@@ -686,11 +693,11 @@ div.csl-indent {
 ## [16] as.logical    as.period     as.POSIXlt    as.vector     as_date      
 ## [21] as_datetime   as_factor     brief         c             cbind2       
 ## [26] coerce        Compare       corresp       droplevels    fixed        
-## [31] format        histogram     initialize    is.na&lt;-       kronecker    
-## [36] length&lt;-      levels&lt;-      Logic         Math          Ops          
-## [41] plot          print         rbind2        recode        relevel      
-## [46] relist        rep           scale_type    show          slotsFromS3  
-## [51] summary       Summary       type_sum      xtfrm        
+## [31] format        histogram     initialize    is.na&lt;-       length&lt;-     
+## [36] levels&lt;-      Logic         Math          Ops           plot         
+## [41] print         rbind2        recode        relevel       relist       
+## [46] rep           scale_type    show          slotsFromS3   summary      
+## [51] Summary       type_sum      xtfrm        
 ## see &#39;?methods&#39; for accessing help and source code</code></pre>
 </div>
 <div id="conclusion-on-s3-objects" class="section level3 hasAnchor" number="8.4.1">

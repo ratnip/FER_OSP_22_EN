@@ -23,7 +23,7 @@
 <meta name="author" content="Damir Pintar" />
 
 
-<meta name="date" content="2023-01-04" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -408,6 +408,13 @@ div.csl-indent {
 <li class="chapter" data-level="13.3" data-path="regression.html"><a href="regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>13.3</b> Multiple linear regression</a></li>
 <li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#homework-exercises-10"><i class="fa fa-check"></i>Homework exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html"><i class="fa fa-check"></i><b>14</b> Introduction to Predictive Modeling</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#what-is-predictive-modeling"><i class="fa fa-check"></i><b>14.1</b> What is predictive modeling?</a></li>
+<li class="chapter" data-level="14.2" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#creating-training-and-test-datasets"><i class="fa fa-check"></i><b>14.2</b> Creating training and test datasets</a></li>
+<li class="chapter" data-level="14.3" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#classification-predictive-models---knn-classification"><i class="fa fa-check"></i><b>14.3</b> Classification Predictive Models - kNN Classification</a></li>
+<li class="chapter" data-level="14.4" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#package-caret-and-predictive-modeling"><i class="fa fa-check"></i><b>14.4</b> Package <code>caret</code> and predictive modeling</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -631,7 +638,7 @@ div.csl-indent {
 ## attr(,&quot;name&quot;)
 ## [1] &quot;package:corrplot&quot;
 ## attr(,&quot;path&quot;)
-## [1] &quot;C:/R/R-4.2.1/library/corrplot&quot;</code></pre>
+## [1] &quot;C:/R/R-4.2.0/library/corrplot&quot;</code></pre>
 </div>
 <hr />
 <p>As we can see, the parent of the global environment is the last loaded package. This should not really be too unusual - the global environment has the largest “priority” when referencing the variables, but immediately below it are the objects and functions that we last loaded into the work environment (supporting the assumption that the “most recent” package is the one that we intend to use immediately). In other words, by loading a package, the new package is always “slotted in” between the global environment and the package that was previously loaded last. When we called the <code>search</code> function, what we actually got was the hierarchy of environments that represented all loaded packages in the order of their loading. In other words, the “search path” and “environment hierarchy” are basically the very same thing.</p>

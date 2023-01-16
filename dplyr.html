@@ -23,7 +23,7 @@
 <meta name="author" content="Damir Pintar" />
 
 
-<meta name="date" content="2023-01-04" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -408,6 +408,13 @@ div.csl-indent {
 <li class="chapter" data-level="13.3" data-path="regression.html"><a href="regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>13.3</b> Multiple linear regression</a></li>
 <li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#homework-exercises-10"><i class="fa fa-check"></i>Homework exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html"><i class="fa fa-check"></i><b>14</b> Introduction to Predictive Modeling</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#what-is-predictive-modeling"><i class="fa fa-check"></i><b>14.1</b> What is predictive modeling?</a></li>
+<li class="chapter" data-level="14.2" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#creating-training-and-test-datasets"><i class="fa fa-check"></i><b>14.2</b> Creating training and test datasets</a></li>
+<li class="chapter" data-level="14.3" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#classification-predictive-models---knn-classification"><i class="fa fa-check"></i><b>14.3</b> Classification Predictive Models - kNN Classification</a></li>
+<li class="chapter" data-level="14.4" data-path="predictive_Modeling.html"><a href="predictive_Modeling.html#package-caret-and-predictive-modeling"><i class="fa fa-check"></i><b>14.4</b> Package <code>caret</code> and predictive modeling</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -476,7 +483,7 @@ div.csl-indent {
 <span id="cb454-8"><a href="dplyr.html#cb454-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(titanic)</span>
 <span id="cb454-9"><a href="dplyr.html#cb454-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(titanic)</span></code></pre></div>
 <pre><code>## Rows: 891 Columns: 12
-## ── Column specification ───────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (5): Name, Sex, Ticket, Cabin, Embarked
 ## dbl (7): PassengerId, Survived, Pclass, Age, SibSp, Parch, Fare
@@ -799,18 +806,17 @@ div.csl-indent {
 <span id="cb484-2"><a href="dplyr.html#cb484-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for a randomly selected 1% of rows</span></span>
 <span id="cb484-3"><a href="dplyr.html#cb484-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sample_frac</span>(titanic, <span class="fl">0.01</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>PassengerId, <span class="sc">-</span>Cabin)</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 10
-##   Survived Pclass Name              Sex     Age SibSp Parch Ticket  Fare Embar…¹
-##   &lt;fct&gt;    &lt;fct&gt;  &lt;chr&gt;             &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;fct&gt;  
-## 1 0        3      Cacic, Mr. Luka   male     38     0     0 315089  8.66 S      
-## 2 1        2      Shelley, Mrs. Wi… fema…    25     0     1 230433 26    S      
-## 3 0        3      Lefebre, Miss. J… fema…    NA     3     1 4133   25.5  S      
-## 4 0        3      Tobin, Mr. Roger  male     NA     0     0 383121  7.75 Q      
-## 5 0        3      Dean, Mr. Bertra… male     26     1     2 C.A. … 20.6  S      
-## 6 0        3      Skoog, Miss. Mar… fema…     2     3     2 347088 27.9  S      
-## 7 0        2      Moraweck, Dr. Er… male     54     0     0 29011  14    S      
-## 8 0        3      Nysveen, Mr. Joh… male     61     0     0 345364  6.24 S      
-## 9 0        3      Braund, Mr. Owen… male     22     1     0 A/5 2…  7.25 S      
-## # … with abbreviated variable name ¹​Embarked</code></pre>
+##   Survived Pclass Name             Sex     Age SibSp Parch Ticket  Fare Embarked
+##   &lt;fct&gt;    &lt;fct&gt;  &lt;chr&gt;            &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;fct&gt;   
+## 1 0        3      Cacic, Mr. Luka  male     38     0     0 315089  8.66 S       
+## 2 1        2      Shelley, Mrs. W… fema…    25     0     1 230433 26    S       
+## 3 0        3      Lefebre, Miss. … fema…    NA     3     1 4133   25.5  S       
+## 4 0        3      Tobin, Mr. Roger male     NA     0     0 383121  7.75 Q       
+## 5 0        3      Dean, Mr. Bertr… male     26     1     2 C.A. … 20.6  S       
+## 6 0        3      Skoog, Miss. Ma… fema…     2     3     2 347088 27.9  S       
+## 7 0        2      Moraweck, Dr. E… male     54     0     0 29011  14    S       
+## 8 0        3      Nysveen, Mr. Jo… male     61     0     0 345364  6.24 S       
+## 9 0        3      Braund, Mr. Owe… male     22     1     0 A/5 2…  7.25 S</code></pre>
 </div>
 <div class="fold s o">
 <div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="dplyr.html#cb486-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for rows from number 10 to number 20, print out all columns beginning with a vowel</span></span>
@@ -838,19 +844,18 @@ div.csl-indent {
 <span id="cb488-5"><a href="dplyr.html#cb488-5" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(titanic, <span class="fu">is.na</span>(Age)) <span class="sc">%&gt;%</span> <span class="fu">sample_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb488-6"><a href="dplyr.html#cb488-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Name<span class="sc">:</span>Fare, Pclass, Survived) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(Name)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 9
-##    Name                     Sex     Age SibSp Parch Ticket   Fare Pclass Survi…¹
-##    &lt;chr&gt;                    &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;fct&gt;  &lt;fct&gt;  
-##  1 Farthing, Mr. John       male     NA     0     0 PC 17… 222.   1      0      
-##  2 Garfirth, Mr. John       male     NA     0     0 358585  14.5  3      0      
-##  3 Harrington, Mr. Charles… male     NA     0     0 113796  42.4  1      0      
-##  4 Mitkoff, Mr. Mito        male     NA     0     0 349221   7.90 3      0      
-##  5 Moore, Mr. Leonard Char… male     NA     0     0 A4. 5…   8.05 3      0      
-##  6 Moran, Mr. James         male     NA     0     0 330877   8.46 3      0      
-##  7 Paulner, Mr. Uscher      male     NA     0     0 3411     8.71 3      0      
-##  8 Peter, Miss. Anna        fema…    NA     1     1 2668    22.4  3      1      
-##  9 Saalfeld, Mr. Adolphe    male     NA     0     0 19988   30.5  1      1      
-## 10 Sadlier, Mr. Matthew     male     NA     0     0 367655   7.73 3      0      
-## # … with abbreviated variable name ¹​Survived</code></pre>
+##    Name                    Sex     Age SibSp Parch Ticket   Fare Pclass Survived
+##    &lt;chr&gt;                   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;fct&gt;  &lt;fct&gt;   
+##  1 Farthing, Mr. John      male     NA     0     0 PC 17… 222.   1      0       
+##  2 Garfirth, Mr. John      male     NA     0     0 358585  14.5  3      0       
+##  3 Harrington, Mr. Charle… male     NA     0     0 113796  42.4  1      0       
+##  4 Mitkoff, Mr. Mito       male     NA     0     0 349221   7.90 3      0       
+##  5 Moore, Mr. Leonard Cha… male     NA     0     0 A4. 5…   8.05 3      0       
+##  6 Moran, Mr. James        male     NA     0     0 330877   8.46 3      0       
+##  7 Paulner, Mr. Uscher     male     NA     0     0 3411     8.71 3      0       
+##  8 Peter, Miss. Anna       fema…    NA     1     1 2668    22.4  3      1       
+##  9 Saalfeld, Mr. Adolphe   male     NA     0     0 19988   30.5  1      1       
+## 10 Sadlier, Mr. Matthew    male     NA     0     0 367655   7.73 3      0</code></pre>
 </div>
 <hr />
 </div>
@@ -1040,18 +1045,18 @@ div.csl-indent {
 ## $ CancellationCode  &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, …
 ## $ Diverted          &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
 ## # A tibble: 6 × 21
-##    Year Month DayofMonth DayOf…¹ DepTime ArrTime Uniqu…² Fligh…³ TailNum Actua…⁴
-##   &lt;int&gt; &lt;int&gt;      &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt;
-## 1  2011     1          1       6    1400    1500 AA          428 N576AA       60
-## 2  2011     1          2       7    1401    1501 AA          428 N557AA       60
-## 3  2011     1          3       1    1352    1502 AA          428 N541AA       70
-## 4  2011     1          4       2    1403    1513 AA          428 N403AA       70
-## 5  2011     1          5       3    1405    1507 AA          428 N492AA       62
-## 6  2011     1          6       4    1359    1503 AA          428 N262AA       64
-## # … with 11 more variables: AirTime &lt;int&gt;, ArrDelay &lt;int&gt;, DepDelay &lt;int&gt;,
-## #   Origin &lt;chr&gt;, Dest &lt;chr&gt;, Distance &lt;int&gt;, TaxiIn &lt;int&gt;, TaxiOut &lt;int&gt;,
-## #   Cancelled &lt;int&gt;, CancellationCode &lt;chr&gt;, Diverted &lt;int&gt;, and abbreviated
-## #   variable names ¹​DayOfWeek, ²​UniqueCarrier, ³​FlightNum, ⁴​ActualElapsedTime</code></pre>
+##    Year Month DayofMonth DayOfWeek DepTime ArrTime UniqueCarrier FlightNum
+##   &lt;int&gt; &lt;int&gt;      &lt;int&gt;     &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt;             &lt;int&gt;
+## 1  2011     1          1         6    1400    1500 AA                  428
+## 2  2011     1          2         7    1401    1501 AA                  428
+## 3  2011     1          3         1    1352    1502 AA                  428
+## 4  2011     1          4         2    1403    1513 AA                  428
+## 5  2011     1          5         3    1405    1507 AA                  428
+## 6  2011     1          6         4    1359    1503 AA                  428
+## # … with 13 more variables: TailNum &lt;chr&gt;, ActualElapsedTime &lt;int&gt;,
+## #   AirTime &lt;int&gt;, ArrDelay &lt;int&gt;, DepDelay &lt;int&gt;, Origin &lt;chr&gt;, Dest &lt;chr&gt;,
+## #   Distance &lt;int&gt;, TaxiIn &lt;int&gt;, TaxiOut &lt;int&gt;, Cancelled &lt;int&gt;,
+## #   CancellationCode &lt;chr&gt;, Diverted &lt;int&gt;</code></pre>
 </div>
 <hr />
 </div>
@@ -1155,33 +1160,33 @@ div.csl-indent {
 <span id="cb510-6"><a href="dplyr.html#cb510-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print the first five rows of the `grouped815` variable</span></span>
 <span id="cb510-7"><a href="dplyr.html#cb510-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(grouped815)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 21
-##    Year Month DayofMonth DayOf…¹ DepTime ArrTime Uniqu…² Fligh…³ TailNum Actua…⁴
-##   &lt;int&gt; &lt;int&gt;      &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt;
-## 1  2011     4         30       6    2116    2255 CO          815 N74856      219
-## 2  2011     4         29       5    2109    2252 CO          815 N57852      223
-## 3  2011     4         28       4    2111    2255 CO          815 N78866      224
-## 4  2011     4         27       3    2112    2326 CO          815 N57863      254
-## 5  2011     4         26       2    2124    2321 CO          815 N57868      237
-## 6  2011     4         25       1    2145    2327 CO          815 N75853      222
-## # … with 11 more variables: AirTime &lt;int&gt;, ArrDelay &lt;int&gt;, DepDelay &lt;int&gt;,
-## #   Origin &lt;chr&gt;, Dest &lt;chr&gt;, Distance &lt;int&gt;, TaxiIn &lt;int&gt;, TaxiOut &lt;int&gt;,
-## #   Cancelled &lt;int&gt;, CancellationCode &lt;chr&gt;, Diverted &lt;int&gt;, and abbreviated
-## #   variable names ¹​DayOfWeek, ²​UniqueCarrier, ³​FlightNum, ⁴​ActualElapsedTime
+##    Year Month DayofMonth DayOfWeek DepTime ArrTime UniqueCarrier FlightNum
+##   &lt;int&gt; &lt;int&gt;      &lt;int&gt;     &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt;             &lt;int&gt;
+## 1  2011     4         30         6    2116    2255 CO                  815
+## 2  2011     4         29         5    2109    2252 CO                  815
+## 3  2011     4         28         4    2111    2255 CO                  815
+## 4  2011     4         27         3    2112    2326 CO                  815
+## 5  2011     4         26         2    2124    2321 CO                  815
+## 6  2011     4         25         1    2145    2327 CO                  815
+## # … with 13 more variables: TailNum &lt;chr&gt;, ActualElapsedTime &lt;int&gt;,
+## #   AirTime &lt;int&gt;, ArrDelay &lt;int&gt;, DepDelay &lt;int&gt;, Origin &lt;chr&gt;, Dest &lt;chr&gt;,
+## #   Distance &lt;int&gt;, TaxiIn &lt;int&gt;, TaxiOut &lt;int&gt;, Cancelled &lt;int&gt;,
+## #   CancellationCode &lt;chr&gt;, Diverted &lt;int&gt;
 ## [1] &quot;------------------------&quot;
 ## # A tibble: 6 × 21
 ## # Groups:   Month [1]
-##    Year Month DayofMonth DayOf…¹ DepTime ArrTime Uniqu…² Fligh…³ TailNum Actua…⁴
-##   &lt;int&gt; &lt;int&gt;      &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt;
-## 1  2011     4         30       6    2116    2255 CO          815 N74856      219
-## 2  2011     4         29       5    2109    2252 CO          815 N57852      223
-## 3  2011     4         28       4    2111    2255 CO          815 N78866      224
-## 4  2011     4         27       3    2112    2326 CO          815 N57863      254
-## 5  2011     4         26       2    2124    2321 CO          815 N57868      237
-## 6  2011     4         25       1    2145    2327 CO          815 N75853      222
-## # … with 11 more variables: AirTime &lt;int&gt;, ArrDelay &lt;int&gt;, DepDelay &lt;int&gt;,
-## #   Origin &lt;chr&gt;, Dest &lt;chr&gt;, Distance &lt;int&gt;, TaxiIn &lt;int&gt;, TaxiOut &lt;int&gt;,
-## #   Cancelled &lt;int&gt;, CancellationCode &lt;chr&gt;, Diverted &lt;int&gt;, and abbreviated
-## #   variable names ¹​DayOfWeek, ²​UniqueCarrier, ³​FlightNum, ⁴​ActualElapsedTime</code></pre>
+##    Year Month DayofMonth DayOfWeek DepTime ArrTime UniqueCarrier FlightNum
+##   &lt;int&gt; &lt;int&gt;      &lt;int&gt;     &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt;             &lt;int&gt;
+## 1  2011     4         30         6    2116    2255 CO                  815
+## 2  2011     4         29         5    2109    2252 CO                  815
+## 3  2011     4         28         4    2111    2255 CO                  815
+## 4  2011     4         27         3    2112    2326 CO                  815
+## 5  2011     4         26         2    2124    2321 CO                  815
+## 6  2011     4         25         1    2145    2327 CO                  815
+## # … with 13 more variables: TailNum &lt;chr&gt;, ActualElapsedTime &lt;int&gt;,
+## #   AirTime &lt;int&gt;, ArrDelay &lt;int&gt;, DepDelay &lt;int&gt;, Origin &lt;chr&gt;, Dest &lt;chr&gt;,
+## #   Distance &lt;int&gt;, TaxiIn &lt;int&gt;, TaxiOut &lt;int&gt;, Cancelled &lt;int&gt;,
+## #   CancellationCode &lt;chr&gt;, Diverted &lt;int&gt;</code></pre>
 </div>
 <hr />
 <p>We see that by grouping we have not “lost” any information - the grouped data frame still looks identical to the original, “non-grouped” frame. In fact, the only indication that something is different is the new, inherited class and the <code>Groups: ..</code> line in the structure print. This means that grouping a frame is merely an indication that some further (most often aggregation) operations are not necessarily performed over the entire data frame, but over individual groups. Also, if we want, we can always easily “ungroup” the frame with the help of the <code>ungroup</code> function.</p>
@@ -1269,8 +1274,8 @@ div.csl-indent {
 <span id="cb520-8"><a href="dplyr.html#cb520-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">MeanArrDelay =</span> <span class="fu">round</span>(<span class="fu">mean</span>(ArrDelay,</span>
 <span id="cb520-9"><a href="dplyr.html#cb520-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">na.rm =</span> T), <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb520-10"><a href="dplyr.html#cb520-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(MeanArrDelay))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;DayOfWeek&#39;. You can
-## override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;DayOfWeek&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <pre><code>## # A tibble: 21 × 3
 ##    DayOfWeek Dest  MeanArrDelay
 ##        &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;
